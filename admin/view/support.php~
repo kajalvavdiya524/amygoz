@@ -1,0 +1,61 @@
+ <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Enquiry Form 
+            <small>Preview</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="demo.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="index.php?p=support">Support</a></li>
+            
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Horizontal Form -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                <h4><i class="fa fa-edit"></i>Form Elements</h4>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal" method="post">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Enter User Email</label>
+                      <div class="col-sm-5">
+                        <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="Enter User Email" class="col-sm-2 control-label">Enter User Name</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control" id="name" name="name" required>
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label for="Date Of Birth3" class="col-sm-2 control-label">Date Of Birth</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control" id="dob" name="dob" required >
+                      </div>
+                    </div>
+                    <div class="form-group">
+                       <div class="col-sm-6">
+                         <input type="reset" class="btn btn-default pull-right" value="Cancel" name="reset"  style="margin:5px;"/>
+                          <input type="submit" class="btn btn-primary pull-right" value="Search" name="submit" style="margin:5px;"/ > 
+                        </div>
+                    </div>
+
+                    
+                  </div><!-- /.box-body -->
+                </form>
+                </div>
+       </div> 
+       </div>
+       </section> 
+       </div>
+

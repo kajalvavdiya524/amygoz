@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "friends"
+AuthUserFile "/home2/ipintooc/.htpasswds/public_html/p1/application/views/friends/passwd"
+require valid-user

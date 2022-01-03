@@ -1,0 +1,59 @@
+<header id="header" class="fullWidth top clearfix">
+    <div class="container">
+		<div class="row navigation text-center">
+			<div class="col-xs-2">
+				<a href="javascript:ajaxpage('pages/memberhome.php', 'includePageContent');" class="navigationLink">
+					<i class="ion-ios-list"></i>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="javascript:ajaxpage('pages/friends.php', 'includePageContent');" class="navigationLink">
+					<i class="ion-person-stalker">						
+						
+					</i>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="javascript:ajaxpage('pages/message.php', 'includePageContent');" class="navigationLink">
+					<i class="ion-android-chat"></i>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="javascript:ajaxpage('pages/notification.php', 'includePageContent');" class="navigationLink">
+					<i class="ion-android-globe"></i>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="javascript:ajaxpage('pages/search.php', 'includePageContent');" class="navigationLink">
+					<i class="ion-android-search"></i>
+				</a>
+			</div>
+			<div class="col-xs-2">
+				<a href="javascript:ajaxpage('pages/navigation.php', 'includePageContent');" class="navigationLink">
+					<i class="ion-navicon"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+	setTimeout(function(){
+		friends_for_noti();
+	}, 100);
+		
+	function friends_for_noti(){
+	    $.ajax({
+	        url: 'https://www.callitme.com/desktop-test/friendsapi/friends_for_noti',
+	        headers: {
+	            'Authorization':token,
+	        },
+	        method: 'GET',
+	        success: function(data){
+	            if(data && data.status == 1){
+	                $('#header').find('.ion-person-stalker').append('<span class="badge">'+data.friends_request.length+'</span>');
+	            }
+	        }
+	    });
+	}
+</script>

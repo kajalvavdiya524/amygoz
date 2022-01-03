@@ -1,0 +1,57 @@
+.nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#add-tab {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 90, 95);
+    border-radius: 40px;
+    text-align: center;
+    line-height: 36px;
+}
+.nav-link {
+    padding: 0;
+}
+.nav-pills .nav-link.active {
+    background: none;
+}
+.nav-pills .nav-link.active svg #Search {
+    fill: rgb(255, 90, 95);
+}
+.nav-pills .nav-link.active svg #Shape {
+    stroke: rgb(255, 90, 95);
+}
+.nav-pills .nav-link.active svg #Oval {
+    stroke: rgb(255, 90, 95);
+}
+.nav-pills .nav-link.active svg #Shape-2 {
+    stroke: rgb(255, 90, 95);
+}
+.nav-pills .nav-link.active svg #Shape-3 {
+    stroke: rgb(255, 90, 95);
+}
+.nav-pills .nav-link.active svg #Union_4 {
+    fill: rgb(255, 90, 95);
+}
+.nav-pills .nav-link.active svg #Path_152 {
+    stroke: rgb(255, 90, 95);
+    fill: rgb(255, 90, 95);
+}
+.nav-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 6px #979797;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.nav-line {
+    width: 150px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 5px;
+    margin: 20px auto 0 auto;
+}

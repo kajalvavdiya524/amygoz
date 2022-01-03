@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <!-- If you delete this tag, the sky will fall on your head -->
+        <meta name="viewport" content="width=device-width" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Call IT Me</title>
+
+        <style type="text/css">
+            @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+            
+            * { 
+                margin:0;
+                padding:0;
+            }
+            * { font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+
+            img { 
+                max-width: 100%; 
+            }
+            .collapse {
+                margin:0;
+                padding:0;
+            }
+            body {
+                -webkit-font-smoothing:antialiased; 
+                -webkit-text-size-adjust:none; 
+                width: 100%!important; 
+                height: 100%;
+            }
+
+
+            /* ------------------------------------- 
+                            ELEMENTS 
+            ------------------------------------- */
+            a { color: #2BA6CB;}
+
+            .btn {
+                text-decoration:none;
+                color: #FFF;
+                background-color: #666;
+                padding:10px 16px;
+                font-weight:bold;
+                margin-right:10px;
+                text-align:center;
+                cursor:pointer;
+                display: inline-block;
+            }
+
+            p.callout {
+                padding:15px;
+                background-color:#ECF8FF;
+                margin-bottom: 15px;
+            }
+            .callout a {
+                font-weight:bold;
+                color: #2BA6CB;
+            }
+
+            table.social {
+                /* 	padding:15px; */
+                background-color: #ebebeb;
+
+            }
+            .social .soc-btn {
+                padding: 3px 7px;
+                font-size:12px;
+                margin-bottom:10px;
+                text-decoration:none;
+                color: #FFF;font-weight:bold;
+                display:block;
+                text-align:center;
+            }
+            a.fb { background-color: #3B5998!important; }
+            a.tw { background-color: #1daced!important; }
+            a.gp { background-color: #DB4A39!important; }
+            a.ms { background-color: #000!important; }
+
+            .sidebar .soc-btn { 
+                display:block;
+                width:100%;
+            }
+
+            /* ------------------------------------- 
+                            HEADER 
+            ------------------------------------- */
+            table.head-wrap { width: 100%;}
+
+            .header.container table td.logo { padding: 15px; }
+            .header.container table td.label { padding: 15px; padding-left:0px;}
+
+
+            /* ------------------------------------- 
+                            BODY 
+            ------------------------------------- */
+            table.body-wrap { width: 100%; background-color: #f5f5f5; padding: 20px;}
+
+
+            /* ------------------------------------- 
+                            FOOTER 
+            ------------------------------------- */
+            table.footer-wrap { width: 100%;	clear:both!important;
+            }
+            .footer-wrap .container td.content  p { border-top: 1px solid rgb(215,215,215); padding-top:15px;}
+            .footer-wrap .container td.content p {
+                font-size:10px;
+                font-weight: bold;
+
+            }
+
+
+            /* ------------------------------------- 
+                            TYPOGRAPHY 
+            ------------------------------------- */
+            h1,h2,h3,h4,h5,h6 {
+                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; line-height: 1.1; margin-bottom:15px; color:#000;
+            }
+            h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; text-transform: none; }
+
+            h1 { font-weight:200; font-size: 44px;}
+            h2 { font-weight:200; font-size: 37px;}
+            h3 { font-weight:500; font-size: 27px;}
+            h4 { font-weight:500; font-size: 23px;}
+            h5 { font-weight:900; font-size: 17px;}
+            h6 { font-weight:900; font-size: 14px; text-transform: uppercase; color:#444;}
+
+            .collapse { margin:0!important;}
+
+            p, ul { 
+                margin-bottom: 10px; 
+                font-weight: normal; 
+                font-size:14px; 
+                line-height:1.6;
+            }
+            p.lead { font-size:17px; }
+            p.last { margin-bottom:0px;}
+
+            ul li {
+                margin-left:5px;
+                list-style-position: inside;
+            }
+
+            .text-center{
+                text-align: center;
+            }
+
+            /* ------------------------------------- 
+                            SIDEBAR 
+            ------------------------------------- */
+            ul.sidebar {
+                background:#ebebeb;
+                display:block;
+                list-style-type: none;
+            }
+            ul.sidebar li { display: block; margin:0;}
+            ul.sidebar li a {
+                text-decoration:none;
+                color: #666;
+                padding:10px 16px;
+                /* 	font-weight:bold; */
+                margin-right:10px;
+                /* 	text-align:center; */
+                cursor:pointer;
+                border-bottom: 1px solid #777777;
+                border-top: 1px solid #FFFFFF;
+                display:block;
+                margin:0;
+            }
+            ul.sidebar li a.last { border-bottom-width:0px;}
+            ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.sidebar li a h5,ul.sidebar li a h6,ul.sidebar li a p { margin-bottom:0!important;}
+
+
+
+            /* --------------------------------------------------- 
+                            RESPONSIVENESS
+                            Nuke it from orbit. It's the only way to be sure. 
+            ------------------------------------------------------ */
+
+            /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+            .container {
+                display:block!important;
+                max-width:600px!important;
+                margin:0 auto!important; /* makes it centered */
+                clear:both!important;
+            }
+
+            /* This should also be a block element, so that it will fill 100% of the .container */
+            .content {
+                padding:15px;
+                max-width:600px;
+                margin:0 auto;
+                display:block; 
+            }
+
+            /* Let's make sure tables in the content area are 100% wide */
+            .content table { width: 100%; }
+
+
+            /* Odds and ends */
+            .column {
+                width: 300px;
+                float:left;
+            }
+            .column tr td { padding: 15px; }
+            .column-wrap { 
+                padding:0!important; 
+                margin:0 auto; 
+                max-width:600px!important;
+            }
+            .column table { width:100%;}
+            .social .column {
+                width: 280px;
+                min-width: 279px;
+                float:left;
+            }
+
+            /* Be sure to place a .clear element after each set of columns, just to be safe */
+            .clear { display: block; clear: both; }
+
+
+            /* ------------------------------------------- 
+                            PHONE
+                            For clients that support media queries.
+                            Nothing fancy. 
+            -------------------------------------------- */
+            @media only screen and (max-width: 600px) {
+
+                a[class="btn"] { display:block!important; margin-bottom:10px!important; background-image:none!important; margin-right:0!important;}
+
+                div[class="column"] { width: auto!important; float:none!important;}
+
+                table.social div[class="column"] {
+                    width:auto!important;
+                }
+
+            }
+        </style>
+
+    </head>
+
+    <body bgcolor="#FFFFFF">
+
+        <!-- HEADER -->
+        <table class="head-wrap" bgcolor="#00bcd4">
+            <tr>
+                <td></td>
+                <td class="header container">
+
+                    <div class="content text-center">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="192.875px" height="88.475px" viewBox="0 0 192.875 88.475" enable-background="new 0 0 192.875 88.475"
+                             xml:space="preserve">
+                            <g>
+                                <g>
+
+                                    <ellipse id="path3400-5-5-9-5_2_" sodipodi:rx="72.133072" sodipodi:cy="-929.44537" sodipodi:cx="275.20963" sodipodi:ry="70.745094" fill="#EE2849" cx="147.769" cy="44.238" rx="45.105" ry="44.238">
+                                    </ellipse>
+                                    <g enable-background="new    ">
+                                        <path fill="#FFFFFF" d="M120.596,52.667V35.579h-3.464v-2.852h9.874l7.592,15.622l7.674-15.622h9.978v2.852h-3.484v17.087h3.484
+                                              v2.852H141.38v-2.852h3.443V35.579l-9.956,20.167h-0.851l-9.853-20.167v17.087h3.173v2.852h-10.205v-2.852H120.596z"/>
+                                        <path fill="#FFFFFF" d="M158.161,52.667V35.579h-3.733v-2.852h23.978v6.865h-3.566v-4.014h-12.321v6.782h10.724v2.851h-10.724
+                                              v7.455h12.321v-4.145h3.566v6.997h-23.978v-2.852H158.161z"/>
+                                    </g>
+                                </g>
+                                <g enable-background="new    ">
+                                    <path fill="#FFFFFF" d="M18.751,47.899l3.236,0.574c-1.549,4.937-5.047,7.406-10.496,7.406c-3.582,0-6.392-1.143-8.432-3.428
+                                          C1.02,50.168,0,47.358,0,44.024c0-3.442,1.064-6.208,3.194-8.295c2.129-2.088,4.985-3.132,8.566-3.132
+                                          c5.31,0,8.719,2.397,10.226,7.192l-3.339,0.524c-1.217-3.561-3.52-5.342-6.907-5.342c-2.503,0-4.442,0.828-5.818,2.482
+                                          c-1.376,1.655-2.064,3.979-2.064,6.972c0,2.741,0.706,4.939,2.116,6.593c1.411,1.656,3.277,2.482,5.601,2.482
+                                          C15.184,53.502,17.576,51.635,18.751,47.899z"/>
+                                    <path fill="#FFFFFF" d="M42.48,55.42h-3.215c-0.125-0.525-0.249-1.518-0.374-2.982c-1.438,2.293-3.886,3.441-7.343,3.441
+                                          c-2.351,0-4.156-0.492-5.414-1.479c-1.258-0.984-1.887-2.164-1.887-3.543c0-1.674,0.898-3.049,2.696-4.127
+                                          c1.797-1.077,4.854-1.616,9.168-1.616c0.581,0,1.507,0.022,2.779,0.065c0-1.311-0.128-2.258-0.384-2.842
+                                          c-0.256-0.585-0.798-1.052-1.628-1.401c-0.83-0.35-1.922-0.524-3.277-0.524c-3.305,0-5.227,0.994-5.766,2.982l-3.008-0.41
+                                          c0.733-3.047,3.817-4.57,9.251-4.57c2.89,0,4.94,0.505,6.15,1.515c1.21,1.011,1.815,2.761,1.815,5.251v7.03
+                                          C42.045,53.377,42.19,54.448,42.48,55.42z M38.892,47.146c-1.328-0.065-2.337-0.099-3.028-0.099c-2.572,0-4.571,0.334-5.995,1.002
+                                          c-1.424,0.668-2.137,1.642-2.137,2.923c0,0.811,0.384,1.5,1.151,2.068c0.768,0.57,1.877,0.855,3.329,0.855
+                                          c1.963,0,3.578-0.564,4.843-1.691c1.266-1.129,1.898-2.453,1.898-3.975C38.954,47.924,38.934,47.563,38.892,47.146z"/>
+                                    <path fill="#FFFFFF" d="M51.814,55.42h-3.257V33.057h3.257V55.42z"/>
+                                    <path fill="#FFFFFF" d="M61.584,55.42h-3.257V33.057h3.257V55.42z"/>
+                                    <path fill="#FFFFFF" d="M72.495,51.75v3.67h-4.646v-3.67H72.495z"/>
+                                    <path fill="#FFFFFF" d="M82.078,33.057v2.867h-3.505v-2.867H82.078z M81.974,38.872V55.42h-3.257V38.872H81.974z"/>
+                                    <path fill="#FFFFFF" d="M97.967,53.667v2.031c-1.148,0.121-2.145,0.182-2.988,0.182c-4.052,0-6.077-1.674-6.077-5.02v-9.972
+                                          h-3.713v-2.016h3.713l0.145-4.161l3.028-0.229v4.391h4.688v2.016h-4.688v10.4c0,1.707,1.12,2.559,3.36,2.559
+                                          C96.183,53.846,97.026,53.788,97.967,53.667z"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                </td>
+                <td></td>
+            </tr>
+        </table><!-- /HEADER -->
+
+
+        <!-- BODY -->
+        <table class="body-wrap">
+            <tr>
+                <td></td>
+                <td class="container" bgcolor="#FFFFFF" style="border: 1px solid #dadada;">
+
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td>
+
+                                    <p>Hi <?php echo $user->user_detail->first_name; ?></p>                                    
+
+                                    <p>Welcome to Callitme</p>
+                                    <p>Please click on the link below to confirm your registration and activate your account.</p>
+                                    <p><?php echo $link;?></p>
+
+                                    <p>
+                                        If you have not registered. <a href="<?php echo $deactivate;?>" style="color: #01BF01;text-decoration:none;">Click here</a> to deactivate this account.
+                                    </p>
+
+                                    <p>
+                                        <span style="font-style:italic;">
+                                            <i>
+                                                If the link above doesn't work, please copy and paste the link into the 'Address' bar of your browser.
+                                            </i>
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </td>
+                <td></td>
+            </tr>
+        </table><!-- /BODY -->
+
+        <!-- FOOTER -->
+        <table class="footer-wrap">
+            <tr>
+                <td></td>
+                <td class="container">
+
+                    <!-- content -->
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <td align="left">
+                                    <p>
+                                        Regards,<br />
+                                        Callitme Team<br />
+                                        <a href="http://callitme.com">callitme.com</a>
+                                    </p>
+
+                                    <p>
+                                        <small>
+                                            <a href="#" target="_blank"><i class="fa fa-pencil"></i> Blog</a> |
+                                            <a href="https://www.facebook.com/callitme" target="_blank"><i class="fa fa-facebook"></i> Facebook</a> |
+                                            <a href="https://plus.google.com/+Callitme" target="_blank"><i class="fa fa-google-plus"></i> Google Plus</a> |
+                                            <a href="https://twitter.com/call_it_me" target="_blank"><i class="fa fa-twitter"></i> Twitter</a><br>
+                                                You are receiving this message because you are a member of Callitme. You can manage your email subscription preferences <a href="">here</a>.     
+                                        </small>                                            
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div><!-- /content -->
+
+                </td>
+                <td></td>
+            </tr>
+        </table><!-- /FOOTER -->
+
+    </body>
+</html>

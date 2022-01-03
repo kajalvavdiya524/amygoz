@@ -1,0 +1,45 @@
+<?php
+session_start();
+
+include('function.php');
+include('config.php');
+include('class.db.php');
+
+$Username=loadvariable('Username',' ');
+$Password=loadvariable('Password',' ');
+
+$db=new DB();
+
+
+$SQL ="SELECT * FROM `admin_login` WHERE Email_Id='".$Username."' AND Password='".md5($Password)."' AND Status='Y'";
+
+$res=$db->get_results($SQL);
+
+
+if(count($res)>0)
+{
+	echo "aaaaaa";
+	$_SESSION['Name']=$res[0]['Name'];
+	$_SESSION['Email_Id']=$res[0]['Email_Id'];
+	$_SESSION['Mobile']=$res[0]['Mobile'];
+	$_SESSION['Password']=$res[0]['Password'];
+	$_SESSION['AdminType']=$res[0]['AdminType'];
+	header("location:../view/index.php?p=home");
+
+
+}
+else {
+	header('location:../view/login.php?msg=1');
+}
+
+
+
+
+
+
+
+
+
+
+
+ ?>

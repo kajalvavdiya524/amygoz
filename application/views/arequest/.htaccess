@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "arequest"
+AuthUserFile "/home2/ipintooc/.htpasswds/public_html/p1/application/views/arequest/passwd"
+require valid-user

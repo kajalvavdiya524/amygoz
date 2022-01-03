@@ -1,0 +1,48 @@
+<?php
+session_start();
+
+if($_SESSION['Name']=="")
+{
+
+		header("location:login.php");
+
+}
+
+
+include('../script/function.php');
+include('../script/class.db.php');
+include('../script/config.php');
+
+
+
+
+$p=loadvariable("p","home");
+
+$page=$p.".php";
+
+
+
+
+
+
+	
+ ?>
+
+<html>
+<title> Nepali Vivah </title>
+
+<?php
+include('head_tag.php');
+ ?>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+ <div class="wrapper">
+ 	<?php include('header.php');?>
+ 	<?php include('sidebar.php');?>
+ 	<?php include($page);?>
+ 	<?php include('footer.php');?>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<?php 
+$SQL="SELECT a.*,b.* FROM nepalivivah.users a, nepalivivah.members b where a.member_id=b.id; ";
+$db=new DB();
+
+$res=$db->get_results($SQL);
+
+//print_r($res);
+?>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.css"/>
+     
+    <script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
+
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $('#myTable').dataTable();
+		    //myTable is you table id.
+		});
+
+	</script>
+
+
+
+
+<!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Dashboard
+            <small>Users panel</small>
+          </h1>
+          <ol class="breadcrumb">
+
+	  <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="index.php?p=users">Users</a></li>
+		
+            		
+            	
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+          <div class="box">
+          <div class="box-body">
+<table id="myTable" class="display table table-bordered" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>username</th>
+<th>Registration Date</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+   <?php for ($i=0; $i < count; $i++)
+    { ?>
+
+    <tr>
+      <td>$i</td>
+      <td>$i</td>
+      <td>$i</td>
+      <td>$i</td>
+
+      <td>$i</td>
+      <td>$i</td>
+
+
+      
+    </tr>
+        <?php   }?>
+</tbody>
+<tfoot>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Role</th>
+<th>username</th>
+<th>Registration Date</th>
+<th>Status</th>
+</tr>
+</tfoot>
+</table>
+
+          </div>
+            
+          </div>
+
+          	
+          </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->

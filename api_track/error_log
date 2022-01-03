@@ -1,0 +1,178 @@
+[02-Feb-2016 03:12:49 America/Denver] PHP Parse error:  syntax error, unexpected '*' in /home2/ipintooc/public_html/api_track/check.php on line 47
+[02-Feb-2016 03:46:32 America/Denver] PHP Notice:  Undefined index: username in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:47:28 America/Denver] PHP Notice:  Undefined index: username in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:47:51 America/Denver] PHP Notice:  Undefined index: username in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:48:40 America/Denver] PHP Notice:  Undefined index: username in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:29 America/Denver] PHP Notice:  Undefined index: username in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:29 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:36 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:37 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:38 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:39 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:40 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:42 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 03:59:54 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_connect(): Host '173-254-3-226.unifiedlayer.com' is not allowed to connect to this MySQL server in /home2/ipintooc/public_html/api_track/api1.php on line 4
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_select_db(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 5
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'ipintooc'@'localhost' (using password: NO) in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 04:00:19 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home2/ipintooc/public_html/api_track/api1.php on line 13
+[02-Feb-2016 05:29:31 America/Denver] PHP Notice:  Undefined index: username in /home2/ipintooc/public_html/api_track/api1.php on line 9
+[02-Feb-2016 05:40:25 America/Denver] PHP Parse error:  syntax error, unexpected '*' in /home2/ipintooc/public_html/api_track/check.php on line 47
+[02-Feb-2016 05:50:00 America/Denver] PHP Parse error:  syntax error, unexpected '*' in /home2/ipintooc/public_html/api_track/check.php on line 47
+[02-Feb-2016 05:50:50 America/Denver] PHP Parse error:  syntax error, unexpected '*' in /home2/ipintooc/public_html/api_track/check.php on line 47

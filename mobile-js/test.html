@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="m_assets/plugins/jquery/1.12.4/jquery.min.js"></script>
+	<script src="m_assets/plugins/js.cookie/js.cookie.js"></script>
+</head>
+<body>
+	
+	<script>
+		$(window).load(function() {
+      		$.ajax({
+			    url: 'https://www.callitme.com/desktop-test/roundapi/',
+			    headers: {
+			        'Authorization':'150e808091018c12eaa6569a97cc742efc5d370c',
+			        // 'X_CSRF_TOKEN':'xxxxxxxxxxxxxxxxxxxx',
+			        // 'Content-Type':'application/json'
+			    },
+			    method: 'GET',
+			    //dataType: 'json',
+			    data: {'radius': '5000'},
+			    success: function(data){
+			      console.log(data);
+			    }
+			});
+		})
+
+		// $.ajax({
+		//     url: 'https://www.callitme.com/desktop-test/accessapi/search',
+		//     headers: {
+		//         'Authorization':'8b80486efc588baf860ffe38f5bc22dcbcce1103',
+		//         // 'X_CSRF_TOKEN':'xxxxxxxxxxxxxxxxxxxx',
+		//         // 'Content-Type':'application/json'
+		//     },
+		//     method: 'GET',
+		//     //dataType: 'json',
+		//     data: {'query': 'ash'},
+		//     success: function(data){
+		//     	var value = jQuery.parseJSON(data);
+		//       	console.log(value.search_user_name);
+		//     }
+		// });
+
+		// var xhr = new XMLHttpRequest();
+		// xhr.open('GET', 'https://www.callitme.com/desktop-test/friendsapi/requests');
+		// xhr.setRequestHeader('Authorization', '6981d595a45867d4bc07a795c0e5cdadddcda505');
+		// xhr.onload = function() {
+		//     //var data = jQuery.parseJSON(xhr.responseText);
+		//     console.log(xhr)
+	 //        // $.each(data.friends, function(index, value){
+	 //        //  	console.log(value);                       
+	 //        // });
+		// };
+		// xhr.send();
+
+
+
+		// $(function(){
+		// 	var xhr = new XMLHttpRequest();
+		// 	xhr.open('GET', 'https://www.callitme.com/desktop-test/accessapi/show_posts?token=8b80486efc588baf860ffe38f5bc22dcbcce1103');
+		// 	xhr.onload = function() {
+		// 		console.log(xhr);
+		// 	    // if (xhr.status === 200) {
+		// 	    //     alert('User\'s name is ' + xhr.responseText);
+		// 	    // }
+		// 	    // else {
+		// 	    //     alert('Request failed.  Returned status of ' + xhr.status);
+		// 	    // }
+		// 	};
+		// 	xhr.send();
+
+		// 	// $.getJSON( " https://www.callitme.com/desktop-test/accessapi/show_posts?token=8b80486efc588baf860ffe38f5bc22dcbcce1103", function( data ) {
+		// 	// 	console.log(data);
+				
+		// 	// });
+		// 	// $.ajax({
+		// 	//    url : "https://www.callitme.com/desktop-test/accessapi/show_posts",
+		// 	//    headers: {
+		// 	//         Authorization : '8b80486efc588baf860ffe38f5bc22dcbcce1103',
+		// 	//    },
+		// 	// 	success: function (text)
+		// 	// 	{
+		// 	// 		console.log(text);
+		// 	// 	}
+		// 	// });
+		
+
+		// 	// $.ajax({
+		// 	//   url: "https://www.callitme.com/desktop-test/accessapi/show_posts",
+		// 	//   beforeSend: function(xhr) {
+		// 	//     xhr.setRequestHeader("authorization", "8b80486efc588baf860ffe38f5bc22dcbcce1103");
+		// 	//   },
+		// 	//   success: function(data) {
+		// 	//   	console.log(data);
+		// 	//   }
+		// 	// });
+
+		// 	// $.ajax({
+  //  //              type: 'GET',
+  //  //              url: 'https://www.callitme.com/desktop-test/accessapi/show_posts',
+  //  //              headers: {Authorization : '8b80486efc588baf860ffe38f5bc22dcbcce1103'}
+  //  //          })
+  //  //          .done(function (data) {
+  //  //              alert(data);                
+  //  //          }).
+  //  //          error(function (data) {
+  //  //              alert(JSON.stringify(data));
+  //  //          });
+  //       });
+
+	</script>
+</body>
+</html>

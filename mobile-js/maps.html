@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript">
+    var data = {"count":6,"users":[{"id":"929","url":"https:\/\/www.callitme.com\/desktop-test\/unpqd3hGLps957","recommend_url":"https:\/\/www.callitme.com\/desktop-test\/peoplereview\/compose?ask=unpqd3hGLps957","message_url":"https:\/\/www.callitme.com\/desktop-test\/messages\/compose?user=unpqd3hGLps957","request_url":"https:\/\/www.callitme.com\/desktop-test\/unpqd3hGLps957","friend_url":"https:\/\/www.callitme.com\/desktop-test\/unpqd3hGLps957","friend":"not_friends","lat":"23.89","long":"90.4058","name":"Sumon Molla","image":"https:\/\/www.callitme.com\/desktop-test\/img\/no_image_s.png","username":"unpqd3hGLps957","age":28,"gender":"Male"},{"id":"5831","url":"https:\/\/www.callitme.com\/desktop-test\/refat","recommend_url":"https:\/\/www.callitme.com\/desktop-test\/peoplereview\/compose?ask=refat","message_url":"https:\/\/www.callitme.com\/desktop-test\/messages\/compose?user=refat","request_url":"https:\/\/www.callitme.com\/desktop-test\/refat","friend_url":"https:\/\/www.callitme.com\/desktop-test\/refat","friend":"friend","lat":"23.89","long":"90.4058","name":"refat hasib","image":"https:\/\/www.callitme.com\/desktop-test\/upload\/pp-5831-sE2uFgfT_s.jpg","username":"refat","age":28,"gender":"Male"},{"id":"928","url":"https:\/\/www.callitme.com\/desktop-test\/oI06IE73qaq956","recommend_url":"https:\/\/www.callitme.com\/desktop-test\/peoplereview\/compose?ask=oI06IE73qaq956","message_url":"https:\/\/www.callitme.com\/desktop-test\/messages\/compose?user=oI06IE73qaq956","request_url":"https:\/\/www.callitme.com\/desktop-test\/oI06IE73qaq956","friend_url":"https:\/\/www.callitme.com\/desktop-test\/oI06IE73qaq956","friend":"not_friends","lat":"23.7104","long":"90.4074","name":"Rouf Manik","image":"https:\/\/www.callitme.com\/desktop-test\/upload\/pp-928-it6xjSNZ_s.jpg","username":"oI06IE73qaq956","age":44,"gender":"Male"},{"id":"5592","url":"https:\/\/www.callitme.com\/desktop-test\/khanpiyash","recommend_url":"https:\/\/www.callitme.com\/desktop-test\/peoplereview\/compose?ask=khanpiyash","message_url":"https:\/\/www.callitme.com\/desktop-test\/messages\/compose?user=khanpiyash","request_url":"https:\/\/www.callitme.com\/desktop-test\/khanpiyash","friend_url":"https:\/\/www.callitme.com\/desktop-test\/khanpiyash","friend":"not_friends","lat":"23.6","long":"89.8333","name":"Piyash Khan","image":"https:\/\/www.callitme.com\/desktop-test\/img\/no_image_s.png","username":"khanpiyash","age":21,"gender":"Male"},{"id":"5161","url":"https:\/\/www.callitme.com\/desktop-test\/JakirHosen1995","recommend_url":"https:\/\/www.callitme.com\/desktop-test\/peoplereview\/compose?ask=JakirHosen1995","message_url":"https:\/\/www.callitme.com\/desktop-test\/messages\/compose?user=JakirHosen1995","request_url":"https:\/\/www.callitme.com\/desktop-test\/JakirHosen1995","friend_url":"https:\/\/www.callitme.com\/desktop-test\/JakirHosen1995","friend":"not_friends","lat":"23.7104","long":"90.4074","name":"Jakir Hosen","image":"https:\/\/www.callitme.com\/desktop-test\/upload\/pp-5161-651hU6Wr_s.jpg","username":"JakirHosen1995","age":21,"gender":"Male"},{"id":"3305","url":"https:\/\/www.callitme.com\/desktop-test\/tarikul","recommend_url":"https:\/\/www.callitme.com\/desktop-test\/peoplereview\/compose?ask=tarikul","message_url":"https:\/\/www.callitme.com\/desktop-test\/messages\/compose?user=tarikul","request_url":"https:\/\/www.callitme.com\/desktop-test\/tarikul","friend_url":"https:\/\/www.callitme.com\/desktop-test\/tarikul","friend":"not_friends","lat":"23.7104","long":"90.4074","name":"Tarikul Islam","image":"https:\/\/www.callitme.com\/desktop-test\/img\/no_image_s.png","username":"tarikul","age":28,"gender":"Male"}]};
+
+    console.log(data);
+
+    // $.each(data.users, function(k, v){
+    //   console.log(v);
+    // });
+
+    function initMap() {
+      var locations = [];
+      var info = '';
+
+      Object.keys(data.users).forEach(function(key) {
+          // info = '<img src="'+data.users[key].image+'" width="100%"><strong>'+data.users[key].name+'</strong><br>\r\
+          // Age: '+data.users[key].age+'<br>\
+          // <a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>';;
+
+          info = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+            '<div id="bodyContent">'+
+              '<img src="'+data.users[key].image+'">'+
+              '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+              'sandstone rock formation in the southern part of the '+
+              'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+              'south west of the nearest large town, Alice Springs; 450&#160;km '+
+              '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+              'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+              'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+              'Aboriginal people of the area. It has many springs, waterholes, '+
+              'rock caves and ancient paintings. Uluru is listed as a World '+
+              'Heritage Site.</p>'+
+              '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+              'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+              '(last visited June 22, 2009).</p>'+
+            '</div>'+
+          '</div>';
+
+          locations[key] = [
+            info,
+            data.users[key].lat,
+            data.users[key].long,
+            key
+          ]
+
+      });
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(23.7104, 90.4074),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      var infowindow = new google.maps.InfoWindow({});
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+          return function () {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+    }
+
+  </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9DpaLPWFoL666n9-OKsFx8NgA0MW5kJQ&libraries=places&callback=initMap" async defer></script>
+  </body>
+</html>

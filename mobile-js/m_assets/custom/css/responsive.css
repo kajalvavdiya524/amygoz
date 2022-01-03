@@ -1,0 +1,21 @@
+/* Extra Small Device */
+@media (max-width : 768px) {
+
+}
+
+/* Small Device */
+@media (min-width: 768px) and (max-width: 991px) { 
+
+}
+
+/* Medium Device */
+@media (min-width: 992px) and (max-width: 1199px) { 
+	.bs-wizard > .bs-wizard-step > .progress{
+		margin: 17px 0;
+	}
+}
+
+/* Large Device */
+@media (min-width: 1200px) { 
+
+}

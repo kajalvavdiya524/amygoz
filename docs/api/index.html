@@ -1,0 +1,4289 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .row.content {height: 1500px}
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    var {
+      color: blue;
+    }
+    @media screen and (max-width: 5000px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+    samp {
+    font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Menu</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Login <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section51">User's Profile <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section2">Register Api</a></li>
+        <li class="active"><a href="#section3">New User Profile update</a></li>
+        <li class="active"><a href="#section4">Profile pic update</a></li>
+        <li class="active"><a href="#section5">Select Username</a></li>
+        <li class="active"><a href="#section48">Friends <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section49">Friends Requests <span class="label label-warning">new</span></a></li>
+        <!--<li class="active"><a href="#section6">Message Compose Api</a></li>
+        <li class="active"><a href="#section7">Message Reply Api</a></li>-->
+        <li class="active"><a href="#section52">Update FCM Token <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section8">Chat Conversation List <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section9">Initial Chat or Direct Message <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section50">Chat Update Last Message <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section10">Search User <span class="label label-warning">new</span></a></li>
+        <li class="active"><a href="#section11">Review user public</a></li>
+        <li class="active"><a href="#section12">Review user anonymously</a></li>
+        <li class="active"><a href="#section13">Edit your review publicly</a></li>
+        <li class="active"><a href="#section14">Edit Review anonymously</a></li>
+        <li class="active"><a href="#section15">Ask For Review</a></li>
+        <li class="active"><a href="#section16">Sent reviews list</a></li>
+        <li class="active"><a href="#section17">Reviews Received</a></li>
+        <li class="active"><a href="#section18">Reviews Requested</a></li>
+        <li class="active"><a href="#section19">Reviews Approve, Decline, Hide or Show</a></li>
+        <li class="active"><a href="#section20">Invite users to join callitme</a></li>
+        <li class="active"><a href="#section21">Fetch Posts</a></li>
+        <li class="active"><a href="#section22">Fetch more Posts</a></li>
+        <li class="active"><a href="#section23">Fetch recent Posts</a></li>
+        <li class="active"><a href="#section24">Profile Views</a></li>
+        <li class="active"><a href="#section25">Email Change</a></li>
+        <li class="active"><a href="#section26">Email Resend Mail</a></li>
+        <li class="active"><a href="#section27">Change Password</a></li>
+        <li class="active"><a href="#section28">Change Username</a></li>
+        <li class="active"><a href="#section29">Username Suggestions</a></li>
+        <li class="active"><a href="#section30">Friends list</a></li>
+        <li class="active"><a href="#section31">Incoming Friends Requests</a></li>
+        <li class="active"><a href="#section32">Friends Requests sent user</a></li>
+        <li class="active"><a href="#section33">Add friends or send friend request & Remove Friends or cancel friend request</a></li>
+        <li class="active"><a href="#section34">Friends Requests accept</a></li>
+        <li class="active"><a href="#section35">Friends Requests reject</a></li>
+        <li class="active"><a href="#section36">Friend Request notification</a></li>
+        <li class="active"><a href="#section37">Message notification</a></li>
+        <li class="active"><a href="#section38">notification</a></li>
+        <li class="active"><a href="#section39">Find User</a></li>
+        <li class="active"><a href="#section40">Around Api</a></li>
+        <li class="active"><a href="#section41">Send Success</a></li>
+        <li class="active"><a href="#section42">Compose Api</a></li>
+        <li class="active"><a href="#section43">Recommend Request Api</a></li>
+        <li class="active"><a href="#section44">Public Profile Search</a></li>
+        <li class="active"><a href="#section45">Profile Check Out</a></li>
+        <li class="active"><a href="#section46">Email Notification</a></li>
+        <li class="active"><a href="#section47">Privacy Settings</a></li>
+        <!-- <li class="active"><a href="#section16">edit_partner_info</a></li>
+        <li class="active"><a href="#section17">send_message</a></li>
+        <li class="active"><a href="#section18">user_reply</a></li>  
+        <li class="active"><a href="#section19">promo_code_use</a></li>
+        <li class="active"><a href="#section20">you_might_be_intrested</a></li>
+        <li class="active"><a href="#section21">like</a></li> -->
+        
+      </ul><br>
+    </div>
+    <div class="col-sm-9">
+      <h4><small>API Reference</small></h4>
+      <hr>
+      <h2>Introducation</h2>
+      <p>The Callitme Mobile API is organized around REST. Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. We support cross-origin resource sharing, allowing you to interact securely with our API from a client-side web application (though you should never expose your secret API key in any public website's client-side code). JSON is returned by all API responses, including errors, although our API libraries convert responses to appropriate language-specific objects.
+      To make the API as explorable as possible, accounts have test mode and live mode API keys. There is no "switch" for changing between modes, just use the appropriate key to perform a live or test transaction. Requests made with test mode credentials never hit the banking networks and incur no cost.</p>
+      
+      <hr>
+      <h2>Authentication</h2>
+      <p>Authenticate your account when using the API by including your secret API key in the request. You can manage your API keys in the Dashboard. Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.</p>
+      <p>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.</p>
+      <hr>
+      <h2>Error</h2>
+      <p>Callitme website uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, etc.), and codes in the 5xx range indicate an error with servers (these are rare).</p>
+      <hr>
+    <h2 id="section1">Login</h2> 
+    <p>Auth user use your register email id and password.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>email :{'xyz@gmail.com'}</code><br>
+    <code>password :{'****'}</code><br><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/login</var><br><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user login email id and password is correct</span></h4>
+    <code>Response :</code>
+    </p><pre>
+    {   
+        "status": "success",
+        "token": (access token to use it in another API),
+        "user": {
+            "username": (username),
+            "first_name": (First Name),
+            "last_name": (Last Name),
+            "name": (Full Name), 
+            "fb_uid": (Firebase UUID),
+            "profile_pic_o": (Profile Pic URL),
+            "profile_pic": (Profile Pic URL),
+            "profile_pic_mini": (Profile Pic URL),
+            "profile_pic_small": (Profile Pic URL),
+            "no_profile_pic": (No Profile Pic Text),
+            "email": (Email),
+            "fb_pass": (Firebase Login Password)
+        }
+    }
+    </pre></p>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If some error</span></h4>
+    <code>Response :</code>
+    <pre>{'status':'error', 'message': (Error Message to display)}</pre>
+    <hr>
+    
+    <h2 id="section51">User's Profile</h2>
+    <p>To profile detail of a user.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+
+    <strong>URL :</strong><br>
+    <var><a href="https://www.callitme.com/accessapi/profile"> https://www.callitme.com/accessapi/profile</a></var><br>
+    OR<br/>
+    <var><a href="https://www.callitme.com/accessapi/profile?username=`username`"> https://www.callitme.com/accessapi/profile?username=`username`</a></var>(if want to get profile detail of another user)
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>
+    {
+        "status": "success",
+        "user": {
+            "username": (username),
+            "first_name": (First Name),
+            "last_name": (Last Name),
+            "name": (Full Name), 
+            "gender": "Male",
+            "location": "Noida, India",
+            "fb_uid": (Firebase UUID),
+            "profile_pic_o": (Profile Pic URL),
+            "profile_pic": (Profile Pic URL),
+            "profile_pic_mini": (Profile Pic URL),
+            "profile_pic_small": (Profile Pic URL),
+            "no_profile_pic": (No Profile Pic Text),
+            "employment": "",
+            "designation": "",
+            "tags": {
+                "Sweet": 3,
+                "Rude": 1,
+                "Selfish": 1,
+                "Shy": 1,
+                "Lazy": 2,
+                "Moody": 2,
+                "Honest": 2,
+                "Generous": 1,
+                "Courteous": 1,
+                "Smart": 1,
+                "Respectful": 1,
+                "Friendly": 1,
+                "Funny": 1,
+                "Social": 1
+            },
+            "social": 63,
+            "counts": {
+                "friends": "5",
+                "reviews": "4",
+                "mutual": 2
+            }
+        }
+    }
+    </pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+
+    <!-- Register Api Section-->
+    <h2 id="section2">User Register Api </h2>  
+    <p>When user register in our website</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>get</code><br>
+    <var>https://www.callitme.com/accessapi/signup</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>first_name :{'type only characters and first latter is capital only english not hindi'}</code><br>
+    <code>last_name :{'type only characters and first latter is capital only english not hindi'}</code><br>
+    <code>sex :{'Male|Female'}</code><br>
+    <code>phase_of_life = 1 :{'For Example: array(1=>'single',2=>'Hard to explain',3=>'Married',4=>'Hanging out with someone',5=>'Divorced',6=>'Engaged',7=>'Widowed')'}</code></br>
+    <code>day:15</code><br>
+    <code>month:07</code><br>
+    <code>year:1992</code><br>
+    <code>email :{'abc@gmail.com'}</code><br>
+    <code>password :{'*****'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fill all input text field</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"All fields are required."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user age less then 13</span></h4>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"We are sorry, but you must be at least 13 years or older to use Callitme. Come back once your hit 13!"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register same email</span></h4>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This email address is already registered."}</pre>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register and fill all required information</span></h4>
+    <code>Response :</code>
+    <pre>{'status': 1,'username':pranay,'message':'Successfully registered'}</pre>
+
+
+
+    <!--New User Profile-->
+    <h2 id="section3">New User Profile Api </h2>  
+    <p>When user register in our website</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>get</code><br>
+    <var>https://www.callitme.com/accessapi/newuser_profile</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>first_name :{'type only characters and first latter is capital only english not hindi'}</code><br>
+    <code>last_name :{'type only characters and first latter is capital only english not hindi'}</code><br>
+    <code>sex :{'Male|Female'}</code><br>
+    <code>phase_of_life = 1 :{'For Example: array(1=>'single',2=>'Hard to explain',3=>'Married',4=>'Hanging out with someone',5=>'Divorced',6=>'Engaged',7=>'Widowed')'}</code></br>
+    <code>phone: 9897945255 {phone number should be minimum 10 digit}</code><br>
+    <code>website: www.xyz.com {user type website if user have no website then website will be "https://www.calitme.com/user's username" }</code><br>
+    <code>location: Delhi, India {location should be pick from google Autocomplete map api }</code><br>
+    <code>home_town: Delhi, India {location should be pick from google Autocomplete map api }</code><br>
+    <code>education: education {Education Institute}</code><br>
+    <code>designation: designation {designation}</code><br>
+    <code>about: about youself {About yourself}</code><br>
+    <code>Authorization: pass token {pass token which is given to at the time of login}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fill all input text field</span></h4>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"All fields are required."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If username is empty</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"0","message":"Please provide username"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register same phone number</span></h4>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This phone number is already registered."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register and fill all required information</span></h4>
+    <code>Response :</code>
+    <pre>{'status': 1,'message':'Successfully updated'}</pre>
+
+
+    <h2 id="section4">Profile Picture</h2>
+    <p>When user complete registration then goto upload profile pic.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <var>https://www.callitme.com/accessapi/save_photo</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>username : username of user </code><br>
+    <code>picture: </code><br>
+    <code>Authorization: pass token {pass token which is given to at the time of login}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User upload profile picture.</span></h4>
+    <code>Response :</code>
+    <pre>:{"status":1,"profile_pic_link":"https:\/\/www.callitme.com\/upload\/pp-5638-qETaNC8Q.jpg","message":"photo updated"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user not provide username or invalid username.</span></h4>
+    <code>Response :</code>
+    <pre>:{"status":0,"message":"Please provide your username "}</pre>
+    <hr>
+
+    <!--Username Updated -->
+    <h2 id="section5">Select Username</h2>
+    <p>When user complete Partner Profile information.then goto select username.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>username : </code><br>
+    <code>member_id : </code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/newuser_username</var><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user select unique username.</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{'status':'1','message':'Username updated.'}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user username have already.</span></h4>
+    
+    <code>Response :</code>
+    <pre>{'status':'0','message':'Username already exists.'}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user update username.</span></h4>
+    <code>Response :</code>
+    <pre>{"toastr_success":"Your Username has been updated. Now your profile \\\n can be viewed and searched by your Username."}</pre>
+
+
+    <!-- Compose message Api -->
+    <h2 id="section6">Compose Message Api</h2>  
+    <p>If user Start conversation with other user </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/messageapi/compose</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>email :{'xyz@gmail.com'}</code><br>
+    <code>message :{'Hi XYZ'}</code><br>
+    <br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;">if user does not gives all request parameter </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"All fields required."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user sent message properly  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":1,"message":"Your message has been sent!"}</pre>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user sent message to other user who's not in their friend list  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"Please upgrade your plan to use this feature."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user's plan has been expired </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"Sorry, you have used all your requests, please upgrade to continue"}</pre>
+    <hr>
+
+
+    <!-- Message Reply Api -->
+    <h2 id="section7">Message Reply Api</h2>  
+    <p>If user Start conversation with other user </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/messageapi/reply</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>to :{'user id of user that you want to reply '}</code><br>
+    <code>reply :{your replied message}</code><br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;">if user does not gives all request parameter </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"All fields required."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user sent reply properly with valid request  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":1,"message":"successfully replied"}</pre>
+    
+    <hr>
+
+
+    <!-- Show Conversation User List -->
+    <h2 id="section48">Friend List</h2>
+    <p>To fetch list of friends of a user.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+
+    <strong>URL :</strong><br>
+    <var><a href="https://www.callitme.com/accessapi/friends"> https://www.callitme.com/accessapi/friends</a></var><br>
+    OR<br/>
+    <var><a href="https://www.callitme.com/accessapi/friends?username=`username`"> https://www.callitme.com/accessapi/friends?username=`username`</a></var>(if want to get friend list of another user)
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>
+    {
+        "status": "success",
+        "friends": [
+            {
+                "username": "2F6BnCucbDh5",
+                "first_name": "Nikhil",
+                "last_name": "Monga",
+                "name": "Nikhil Monga",
+                "location": "Noida, India",
+                "gender": "Male",
+                "fb_uid": "dznzTCB4X3fGbHE4tLb6WHsooAy2",
+                "profile_pic_o": null,
+                "profile_pic": null,
+                "profile_pic_mini": null,
+                "profile_pic_small": null,
+                "no_profile_pic": "NM"
+            },
+            {
+                ..
+            }
+        ]
+    }
+    </pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+
+    <!-- Show Conversation User List -->
+    <h2 id="section49">Friend Requests</h2>
+    <p>To fetch list of friend requests received for a user.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+
+    <code>URL:</code>
+    <var><a href="https://www.callitme.com/accessapi/friend_requests"> https://www.callitme.com/accessapi/friend_requests</a></var><br>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>
+    {
+        "status": "success",
+        "requests": [
+            {
+                "username": "2F6BnCucbDh5",
+                "first_name": "Nikhil",
+                "last_name": "Monga",
+                "name": "Nikhil Monga",
+                "location": "Noida, India",
+                "gender": "Male",
+                "fb_uid": "dznzTCB4X3fGbHE4tLb6WHsooAy2",
+                "profile_pic_o": null,
+                "profile_pic": null,
+                "profile_pic_mini": null,
+                "profile_pic_small": null,
+                "no_profile_pic": "NM"
+            },
+            {
+                ..
+            }
+        ]
+    }
+    </pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+
+    <!-- Show Conversation User List -->
+    <h2 id="section8">Chat Conversation List</h2>
+    <p>To fetch chat list of a user.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+
+    <code>URL:</code>
+    <var><a href="https://www.callitme.com/accessapi/chat_list?get"> https://www.callitme.com/accessapi/chat_list?get</a></var><br>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>
+    {
+        "status": "success",
+        "chats": [
+            {
+                "user_from": (user id of the user that initiated the chat very first time),
+                "user_to": (user id of the other user),
+                "code": (chat code, used for firebase),
+                "start_date": "2018-04-19 10:04:49" (chat start date),
+                "last_message": "Hi" (last message),
+                "last_message_from": "5" (user id of the user who sent last message),
+                "last_message_time": "2018-09-10 08:37:04" (last message time),
+                "to_deleted": "0" (if deleted by the `to` user?),
+                "to_deleted_time": (timestamp when `to` user deleted the chat),
+                "from_deleted": (if deleted by the `from` user?),
+                "from_deleted_time": (timestamp when `from` user deleted the chat),
+                "to": {
+                    "username": "2F6BnCucbDh5",
+                    "first_name": "Nikhil",
+                    "last_name": "Monga",
+                    "name": "Nikhil Monga",
+                    "fb_uid": "dznzTCB4X3fGbHE4tLb6WHsooAy2",
+                    "profile_pic_o": null,
+                    "profile_pic": null,
+                    "profile_pic_mini": null,
+                    "profile_pic_small": null,
+                    "no_profile_pic": "NM"
+                },
+                "from": {
+                    "username": "pankaj",
+                    "first_name": "Pankaj",
+                    "last_name": "Shrivastav",
+                    "name": "Pankaj Shrivastav",
+                    "fb_uid": "hHSaDNvbf8fo7RjbgooWZp7HCvU2",
+                    "profile_pic_o": null,
+                    "profile_pic": null,
+                    "profile_pic_mini": null,
+                    "profile_pic_small": null,
+                    "no_profile_pic": "PS"
+                }
+            },
+            {
+                ..
+            }
+        ]
+    }
+    </pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+
+
+    <!-- Show Conversation messages with user -->
+    <h2 id="section9"> Initiate Chat or Direct Message to User</h2>  
+    <p>To initiate chat with user or send direct message to user.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+    
+    <strong>Request  Parameter :</strong><br>
+    <code>username : 'abc' (username of the user whom we want to send message)</code><br>
+    <code>message : 'msg' (message to send)</code><br>
+    <code>timestamp : '1537271152' (message timestamp)</code><br><br>
+
+    <code>URL:</code>
+    <var><a href="https://www.callitme.com/accessapi/chat_initiate"> https://www.callitme.com/accessapi/chat_initiate</a></var><br>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>
+    {
+        "status": "success",
+        "chats": {
+            "user_from": (user id of the user that initiated the chat very first time),
+            "user_to": (user id of the other user),
+            "code": (chat code, used for firebase),
+            "start_date": "2018-04-19 10:04:49" (chat start date),
+            "last_message": "Hi" (last message),
+            "last_message_from": "5" (user id of the user who sent last message),
+            "last_message_time": "2018-09-10 08:37:04" (last message time),
+            "to_deleted": "0" (if deleted by the `to` user?),
+            "to_deleted_time": (timestamp when `to` user deleted the chat),
+            "from_deleted": (if deleted by the `from` user?),
+            "from_deleted_time": (timestamp when `from` user deleted the chat),
+            "to": {
+                "username": "2F6BnCucbDh5",
+                "first_name": "Nikhil",
+                "last_name": "Monga",
+                "name": "Nikhil Monga",
+                "fb_uid": "dznzTCB4X3fGbHE4tLb6WHsooAy2",
+                "profile_pic_o": null,
+                "profile_pic": null,
+                "profile_pic_mini": null,
+                "profile_pic_small": null,
+                "no_profile_pic": "NM"
+            },
+            "from": {
+                "username": "pankaj",
+                "first_name": "Pankaj",
+                "last_name": "Shrivastav",
+                "name": "Pankaj Shrivastav",
+                "fb_uid": "hHSaDNvbf8fo7RjbgooWZp7HCvU2",
+                "profile_pic_o": null,
+                "profile_pic": null,
+                "profile_pic_mini": null,
+                "profile_pic_small": null,
+                "no_profile_pic": "PS"
+            }
+        }
+    }
+    </pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+    
+    <h2 id="section50">Update Chat Last Message</h2>  
+    <p>To update last message.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+    
+    <strong>Request  Parameter :</strong><br>
+    <code>username : 'abc' (username of the user whom sent the message)</code><br>
+    <code>message : 'msg' (message)</code><br>
+    <code>chat : 'S2K123K' (chat code)</code><br>
+    <code>timestamp : '1537271152' (message timestamp)</code><br><br>
+
+    <code>URL:</code>
+    <var><a href="https://www.callitme.com/accessapi/update_last_message"> https://www.callitme.com/accessapi/update_last_message</a></var><br>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>{"status":"success","message": "Message Updated Successfully"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+    
+    <h2 id="section52">Update FCM Token</h2>  
+    <p>To update fcm token.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+    
+    <strong>Request  Parameter :</strong><br>
+    <code>fcm_token : `token` </code><br>
+
+    <code>URL:</code>
+    <var><a href="https://www.callitme.com/accessapi/update_fcm_token"> https://www.callitme.com/accessapi/update_fcm_token</a></var><br>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> Success Response.</span></h4>
+    
+    <code>Response :</code>
+    <pre>{"status":"success","message": "Token Updated Successfully"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is any error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+    <hr>
+
+    <!-- Show Conversation User List -->
+    <h2 id="section10"> Search User </h2>  
+    <p>To Search registered user in Callitme.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>Get</code><br>
+    
+    <strong>Header :</strong><br>
+    <code>Authorization = token</code><br>
+
+    <strong>Request  Parameter :</strong><br>
+    <code>query : 'nikhil' (search query)</code><br>
+    
+    <code>URL:</code>
+    <var><a href="https://www.callitme.com/accessapi/search_user?query=nikhil"> https://www.callitme.com/accessapi/search_user?query=nikhil</a></var><br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if success </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+            "status": "success",
+            "users": [
+                {
+                    "username": "2F6BnCucbDh5",
+                    "gender": "Male",
+                    "first_name": "Nikhil",
+                    "last_name": "Monga",
+                    "name": "Nikhil Monga",
+                    "fb_uid": "dznzTCB4X3fGbHE4tLb6WHsooAy2",
+                    "location": "",
+                    "phase_of_life": "Single",
+                    "profile_pic_o": null,
+                    "profile_pic": null,
+                    "profile_pic_mini": null,
+                    "profile_pic_small": null,
+                    "no_profile_pic": "NM"
+                },
+                {
+                    ..
+                }
+            ]
+        }
+    </pre>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If there is error.</span></h4>
+    <code>Response :</code>
+    <pre>{"status":"error","message":`error message`}</pre>
+
+    <hr>
+
+
+    <!-- Review user public -->
+    <h2 id="section11">Review user public </h2>  
+    <p> Review user public </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/send</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'type your username '}</code><br>
+    <code>email :{'type email of user who you want to review'}</code><br>
+    <code>words[] :{'type words '}</code><br>
+    <code>relation :{'type relation between both of you'}</code><br>
+    <code>message :{'write something as review'}</code><br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user review already reviewed user </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+      "status": 1,
+      "message": "you have already reviewed. Please edit the review",
+      "email": "donaldtrump6@callitme.com",
+      "review_id": "288",
+      "about": "jhsad ZXZXjs adhs jad asjdasa jdsh djsa djsha dsd asd sd",
+      "words": "aasd hsj hdb shabd sabd hsbadj hss hjsd ",
+      "relation": "Friends"
+    }</pre>
+    <hr>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user review new user </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+        "status":1,
+        "message":"Your review has been successfully sent."
+        }</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass self email id  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"You can't review yourself."}</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+
+    <hr>
+
+
+    <!-- Edit Review public -->
+    <h2 id="section12">Review User anonymously </h2>  
+    <p> Review User anonymously </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/send_annonymaous</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'type your username '}</code><br>
+    <code>email :{'type email of user who you want to review'}</code><br>
+    <code>words[] :{'type words '}</code><br>
+    <code>relation :{'type relation between both of you'}</code><br>
+    <code>message :{'write something as review'}</code><br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user review already reviewed user anonymously</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+      "status": 1,
+      "message": "you have already reviewed. Please edit the review",
+      "email": "spasskayav@mail.ua",
+      "review_id": "295",
+      "about": "jhsad sa jdsh djsa djsha dsd asd sd",
+      "words": "aasd hsj hdb shabd sabd hsbadj hss hjsd ",
+      "relation": "Friends"
+    }</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user review new user anonymously </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+        "status":1,
+        "message":"Your review has been successfully sent."
+        }</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass self email id  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"You can't review yourself."}</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+
+
+    <!-- Edit Review publicly -->
+    <h2 id="section13"> Edit Review publicly </h2>  
+    <p> Edit Review publicly </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/send</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'type your username '}</code><br>
+    <code>email :{'type email of user who you want to review'}</code><br>
+    <code>words[] :{'type words '}</code><br>
+    <code>relation :{'type relation between both of you'}</code><br>
+    <code>message :{'write something as review'}</code><br>
+    <code>edit_recommend :{'review id'}</code><br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":1,"message":"Your review has been successfully sent."}</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass self email id  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"You can't review yourself."}</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+    <hr>
+
+
+
+     <!-- Edit Review anonymously -->
+    <h2 id="section14"> Edit Review anonymously </h2>  
+    <p> Edit Review publicly </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/send_annonymaous</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'type your username '}</code><br>
+    <code>email :{'type email of user who you want to review'}</code><br>
+    <code>words[] :{'type words '}</code><br>
+    <code>relation :{'type relation between both of you'}</code><br>
+    <code>message :{'write something as review'}</code><br>
+    <code>edit_recommend :{'review id'}</code><br>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":1,"message":"Your review has been successfully sent."}</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass self email id  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"You can't review yourself."}</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+
+    <hr>
+     
+    <!-- Ask For Reviews -->
+    <h2 id="section15"> Ask For Reviews </h2>  
+    <p> Ask For Reviews </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/askreview</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'type your username '}</code><br>
+    <code>email :{'type email of user who you want to Ask review'}</code><br>
+    <code>message :{'Request for review'}</code><br>
+    
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":1,",message":"Your request for review is sent successfully."}</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user request those user who already give you review</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+          "status": 1,
+          "message": "Diksha Shrivastava has already reviewed you once. \r\n Diksha cannot review you again."
+        }</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+
+    <hr>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user ask review yourself</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+          "status": 0,
+          "message": "You can't ask for a review from yourself."
+        }</pre>
+
+    <hr>
+
+    <!-- Reviews sent list -->
+    <h2 id="section16"> Reviews sent list  </h2>  
+    <p> Reviews sent list  </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/recommend_sent</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'type your username '}</code><br>
+    
+    
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username and he sent reviews some users then   </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "message": "Review List",
+  "list": [
+    {
+      "name": "Kristen Dellit",
+      "username": "KathleneKathlene03",
+      "profile_pic": "no_image_s.png",
+      "review_time": "1h ago",
+      "review_message": "jhsad sa jdsh djsa djsha dsd asd sdddddddddddddddddddddddsad dsa dsa ddddddddddddddddddsa dsa sd sd dddddaddddddddddddjhsad sa jdsh djsa djsha dsd asd sdddddddddddddddddddddddsad dsa dsa ddddddddddddddddddsa dsa sd sd dddddadddddddddddd\njhsad sa jdsh djsa djsha dsd asd sdddddddddddddddddddddddsad dsa dsa ddddddddddddddddddsa dsa sd sd dddddadddddddddddd\njhsad sa jdsh djsa djsha dsd asd sdddddddddddddddddddddddsad dsa dsa ddddddddddddddddddsa dsa sd sd dddddadddddddddddd\njhsad sa jdsh djsa djsha dsd asd sdddddddddddddddddddddddsad dsa dsa ddddddddddddddddddsa dsa sd sd dddddadddddddddddd",
+      "review_id": "314"
+    },
+    {
+      "name": "Xavier Evergood",
+      "username": "Xavier-Evergood",
+      "profile_pic": "no_image_s.png",
+      "review_time": "2h ago",
+      "review_message": "thanks",
+      "review_id": "313"
+    },
+    {
+      "name": "Ani Po",
+      "username": "PSf3GLqiqDk973",
+      "profile_pic": "no_image_s.png",
+      "review_time": "2h ago",
+      "review_message": "thanks",
+      "review_id": "312"
+    },
+    {
+      "name": "Mauricio Cornejo",
+      "username": "ee1OqLu89OM853",
+      "profile_pic": "no_image_s.png",
+      "review_time": "2h ago",
+      "review_message": "thanks",
+      "review_id": "311"
+    }
+}</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username and he did not sent reviews to others then</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+          "status": 1,
+          "message": "You have not reviewed anyone yet."
+        }</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+
+    <hr>
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> username is blank </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+          "status": 0,
+          "message": "Please paas username of logged in user."
+        }</pre>
+
+    <hr>
+
+
+    <!-- Reviews receive list-->
+    <h2 id="section17"> Reviews receive list  </h2>  
+    <p> Reviews receive list  </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/recommend_recieve</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    
+    
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username and he recevies reviews from some users then   </span></h4>
+    <br>
+    <code>Response :</code>
+        <pre>{
+      "status": 1,
+      "receive reviews": [
+        {
+          "status": 1,
+          "message": "User's review you",
+          "name": "Pranay Chauhan",
+          "review_message": "thanks",
+          "review_id": "289",
+          "review_time": "12th Dec",
+          "username": "pranay",
+          "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+          "hide": "Hide"
+        },
+        {
+          "status": 1,
+          "message": "User's review you",
+          "name": "Anonymous User",
+          "review_message": "thanks",
+          "review_id": "289",
+          "review_time": "6th Sep"
+        },
+        {
+          "status": 1,
+          "message": "User's review you",
+          "name": "Anonymous User",
+          "review_message": "thanks",
+          "review_id": "289",
+          "review_time": "12th Mar"
+        },
+        {
+          "status": 1,
+          "message": "User's review you",
+          "name": "Anonymous User",
+          "review_message": "thanks",
+          "review_id": "289",
+          "review_time": "12th Mar"
+        },
+        {
+          "status": 1,
+          "message": "User's review you",
+          "name": "Aaditya Prakash",
+          "review_message": "nice person",
+          "review_id": "144",
+          "review_time": "7th Feb",
+          "username": "aaaditya",
+          "profile_pic": "pp-3316-ucIs6VES_s.jpg",
+          "hide": "Hide"
+        },
+        {
+          "status": 1,
+          "message": "User's review you",
+          "name": "Ash Shrivastav",
+          "review_message": "Best at whatever he does. Religious, believes in principles, unquestionable integrity. ",
+          "review_id": "75",
+          "review_time": "2nd Sep",
+          "username": "ash-shrivastav",
+          "profile_pic": "pp-6-L3aU3jxQ_s.jpg",
+          "hide": "Hide"
+        }
+      ]
+    }</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username and nobody review you</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+          "stauts": 0,
+          "message": "No one has reviewed you yet."
+        }</pre>
+
+    <hr>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"This field is required."}</pre>
+    <hr>
+    
+   
+
+   <!-- Reviews Requested list-->
+    <h2 id="section18"> Reviews Requested list  </h2>  
+    <p> Reviews Requested list  </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/recommend_recieve</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    
+    
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username and he/she recevies request for reviews from other users then   </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "message": "request for Review",
+  "requested_users": [
+    {
+      "profile_pic": "no_image_s.png",
+      "req_time": "2m ago",
+      "request_id": "158",
+      "username": "SinghAmita",
+      "name": "Amita Singh",
+      "message": "please review me "
+    }
+  ]
+}</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username and nobody review you</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+          "stauts": 0,
+          "message": "No one has reviewed you yet."
+        }</pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user left words parameter  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{"status":0,"message":"No one has requested a review from you."}</pre>
+
+    <hr>
+
+
+    <!-- Reviews Approve, Decline, Hide or Show-->
+    <h2 id="section19"> Reviews Approve, Decline, Hide or Show  </h2>  
+    <p> Reviews Approve, Decline, Hide or Show  </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/state</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    <code>state :{any one show, approve, decline, hide}</code><br>
+    <code>recommend :{review id}</code><br>
+    
+    
+    
+    
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter and state = approve  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+      "status": 1,
+      "message": "approve",
+      
+    }</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter and state =  decline  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+      "status": 1,
+      "message": "decline",
+      
+    }</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter and state = hide  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+      "status": 1,
+      "message": "hide",
+      
+    }</pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request parameter and state =  show  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+      "status": 1,
+      "message": "show",
+      
+    }</pre>
+    <hr>
+
+    <!-- Invite users to callitme-->
+    <h2 id="section20">Invite users to callitme</h2>  
+    <p> Invite users to callitme </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/importapi/invite</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    <code>email :{psingh@yahoo.com;osingh@gmail.com}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request   </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "message": "Invitation sent successfully."
+}</pre>
+    <hr>
+
+    <!-- show posts -->
+    <h2 id="section21">Show Posts</h2>  
+    <p> Show Posts </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/show_posts</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request   </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "message": "Posts fetch successfully",
+  "posts": [
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1193",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " is reviewed by <a href=\"pranay\">Pranay Chauhan</a>",
+      "post_time": "13th Dec"
+    },
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1174",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " has updated profile picture. ",
+      "post_time": "22nd Nov"
+    },
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1161",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1159",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1158",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1157",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1156",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "17th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1155",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "12th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1151",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "30th Sep"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1150",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "30th Sep"
+    }
+  ]
+}</pre>
+    <hr>
+
+    <!-- show more posts -->
+    <h2 id="section22">Show  more Posts</h2>  
+    <p> Show more Posts </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/showposts</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    <code>time :{'last post time '}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request   </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "message": "Posts fetch successfully",
+  "posts": [
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1193",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " is reviewed by <a href=\"pranay\">Pranay Chauhan</a>",
+      "post_time": "13th Dec"
+    },
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1174",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " has updated profile picture. ",
+      "post_time": "22nd Nov"
+    },
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1161",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1159",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1158",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1157",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1156",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "17th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1155",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "12th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1151",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "30th Sep"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1150",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "30th Sep"
+    }
+  ]
+}</pre>
+    <hr>
+
+
+
+
+     <!-- show recent posts -->
+    <h2 id="section23">Show recent Posts</h2>  
+    <p> Show recent Posts </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/recent_post</var><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request   </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "message": "Posts fetch successfully",
+  "posts": [
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1193",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " is reviewed by <a href=\"pranay\">Pranay Chauhan</a>",
+      "post_time": "13th Dec"
+    },
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1174",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " has updated profile picture. ",
+      "post_time": "22nd Nov"
+    },
+    {
+      "profile_pic": "pp-20-Jxpb4tL2_s.jpg",
+      "post_id": "1161",
+      "show_post_delete_button": false,
+      "name": "Pankaj Shrivastav",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1159",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1158",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1157",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "18th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1156",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "17th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1155",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "12th Oct"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1151",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "30th Sep"
+    },
+    {
+      "profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "post_id": "1150",
+      "show_post_delete_button": true,
+      "name": "Pranay Chauhan",
+      "post": " has updated profile picture. ",
+      "post_time": "30th Sep"
+    }
+  ]
+}</pre>
+    <hr>
+
+
+
+
+
+     <!-- Profile Views -->
+    <h2 id="section24">Profile Views</h2>  
+    <p> Show recent Posts </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/view_profile</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>username :{'username'}</code><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          "stauts": 0,
+          "message": "Invalid token"
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "status": 1,
+  "tags": {
+    "Sweet": 6,
+    "akjsdb": 1,
+    "askjdb": 1,
+    "asdjsa": 1,
+    "Rude": 2,
+    "Selfish": 2,
+    "Materialistic": 2,
+    "Sensitive": 1,
+    "Mean": 2,
+    "Honest": 3,
+    "Generous": 2,
+    "Lazy": 1,
+    "Silly": 1,
+    "Courteous": 1,
+    "Joyful": 1,
+    "Talkative": 1,
+    "Respectful": 1,
+    "Thoughtful": 1,
+    "Friendly": 1
+  },
+  "Name": "Pankaj Shrivastav",
+  "location": "Melbourne, Victoria, Australia",
+  "gender": "Male",
+  "phase_of_life": "Single",
+  "education": "Federation University Australia",
+  "profession": "Strategist at Maangu",
+  "from": "Perth, Western Australia, Australia",
+  "lives_in": "Melbourne, Victoria, Australia",
+  "no_of_friends": "37",
+  "friends": [
+    {
+      "friend_profile_pic": "pp-6-L3aU3jxQ_s.jpg",
+      "friend_name": "Ash Shrivastav",
+      "friend_username": "ash-shrivastav",
+      "friend_location": "San Francisco, CA, United States"
+    },
+    {
+      "friend_profile_pic": "pp-8-ZQ9ZvpNP_s.jpg",
+      "friend_name": "Riti Patel",
+      "friend_username": "ritipatel",
+      "friend_location": "Washington, DC, United States"
+    },
+    {
+      "friend_profile_pic": "pp-13-h9JllU6I_s.jpg",
+      "friend_name": "Gunjan Shrivastav",
+      "friend_username": "gunjan",
+      "friend_location": "Varanasi, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-19-F2GJT2Er_s.jpg",
+      "friend_name": "Deepak Srivastav",
+      "friend_username": "deepaksrivastav",
+      "friend_location": "Surkhet, Nepal"
+    },
+    {
+      "friend_profile_pic": "pp-21-c3Nl71xN_s.jpg",
+      "friend_name": "Rupen Srivastava",
+      "friend_username": "8aEDdysABlB21",
+      "friend_location": "Dallas, TX, United States"
+    },
+    {
+      "friend_profile_pic": "pp-62-r2xJNjZc_s.jpg",
+      "friend_name": "Uma Shrivastav",
+      "friend_username": "umadshrivastav",
+      "friend_location": "Kathmandu, Central Region, Nepal"
+    },
+    {
+      "friend_profile_pic": "pp-67-xpAFkxL4_s.jpg",
+      "friend_name": "Anil Chaudhari",
+      "friend_username": "imanilchaudhari",
+      "friend_location": "Kathmandu, Central Region, Nepal"
+    },
+    {
+      "friend_profile_pic": "pp-68-eHIkIaM5_s.jpg",
+      "friend_name": "Yogendra Yadav",
+      "friend_username": "yogendra",
+      "friend_location": "Kathmandu, Central Region, Nepal"
+    },
+    {
+      "friend_profile_pic": "pp-99-m8yKfQnj_s.jpg",
+      "friend_name": "Kanchan Srivastava",
+      "friend_username": "kanchan",
+      "friend_location": "Houston, TX, United States"
+    },
+    {
+      "friend_profile_pic": "pp-181-5lYDupen_s.jpg",
+      "friend_name": "Ayodhya Shrivastav",
+      "friend_username": "ayodhyapshrivastav",
+      "friend_location": "Kathmandu, Central Region, Nepal"
+    },
+    {
+      "friend_profile_pic": "pp-198-gz60IheM_s.jpg",
+      "friend_name": "Harsh vardhan Pratap Singh",
+      "friend_username": "harshsingh",
+      "friend_location": "Faizabad, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-493-lCj75bZQ_s.jpg",
+      "friend_name": "Bishal Shah",
+      "friend_username": "bishalshah",
+      "friend_location": "380 Etna Street, Brooklyn, NY, United States"
+    },
+    {
+      "friend_profile_pic": "pp-504-QD1mDSgX_s.jpg",
+      "friend_name": "Ross Ford",
+      "friend_username": "rosspford",
+      "friend_location": "Chicago,IL, United States"
+    },
+    {
+      "friend_profile_pic": "YS",
+      "friend_name": "Yashwant Srivastava",
+      "friend_username": "JRRnCF8zUpa541",
+      "friend_location": "Thrissur, Kerala, India"
+    },
+    {
+      "friend_profile_pic": "MS",
+      "friend_name": "Munny Shrivastav",
+      "friend_username": "MunnyShrivastav",
+      "friend_location": "Lucknow, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-955-SEdXwzC2_s.jpg",
+      "friend_name": "Clara Felix",
+      "friend_username": "ClaraFelix",
+      "friend_location": "Benin"
+    },
+    {
+      "friend_profile_pic": "pp-2174-kwBc2S3P_s.jpg",
+      "friend_name": "Krishna Pandey",
+      "friend_username": "krishnapandey",
+      "friend_location": "New York, NY, United States"
+    },
+    {
+      "friend_profile_pic": "pp-3138-wUWLbK0Q_s.jpg",
+      "friend_name": "Hasib Bin siddique",
+      "friend_username": "XrMwIknOt4m3174",
+      "friend_location": ""
+    },
+    {
+      "friend_profile_pic": "pp-3191-vV8Pd6Dg_s.jpg",
+      "friend_name": "Narendra  Srivastava",
+      "friend_username": "narendra-srivastava",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "PS",
+      "friend_name": "PAMMI SAXENA",
+      "friend_username": "pammisaxena07",
+      "friend_location": "BUDAUN"
+    },
+    {
+      "friend_profile_pic": "pp-3197-fckgc8id_s.jpg",
+      "friend_name": "Karmjit  Singh",
+      "friend_username": "karmjit",
+      "friend_location": "India"
+    },
+    {
+      "friend_profile_pic": "pp-3202-EbAXtNi8_s.jpg",
+      "friend_name": "Anup Srivastava",
+      "friend_username": "anupsrivastava",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-3273-J4EUdGA2_s.jpg",
+      "friend_name": "Abhishek Singh",
+      "friend_username": "abhisheksingh10",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-3304-kT2yXIfy_s.jpg",
+      "friend_name": "Pranay singh Chauhan",
+      "friend_username": "pranaysingh",
+      "friend_location": "Delhi, India"
+    },
+    {
+      "friend_profile_pic": "TI",
+      "friend_name": "Tarikul Islam",
+      "friend_username": "tarikul",
+      "friend_location": ""
+    },
+    {
+      "friend_profile_pic": "pp-3306-4UlwLMqG_s.jpg",
+      "friend_name": "Pradeep Goswami",
+      "friend_username": "goswamipradeep1990",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-3316-ucIs6VES_s.jpg",
+      "friend_name": "Aaditya Prakash",
+      "friend_username": "aaaditya",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "AS",
+      "friend_name": "Anand Srivastava",
+      "friend_username": "anand",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-3321-lnt5SYWJ_s.jpg",
+      "friend_name": "Rajneesh Srivastav",
+      "friend_username": "rajneeshsrivastav",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-3330-Cp4vrYmx_s.jpg",
+      "friend_name": "Shefali Singh",
+      "friend_username": "singhshefali",
+      "friend_location": "Agra, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-5214-z0VcfYhH_s.jpg",
+      "friend_name": "Dn Giri",
+      "friend_username": "dngiri",
+      "friend_location": "Gulariya-6, Bardiya"
+    },
+    {
+      "friend_profile_pic": "pp-5215-DS5cFlwq_s.jpg",
+      "friend_name": "Shikha Shrivastav",
+      "friend_username": "shikha",
+      "friend_location": "Mihinpurwa, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-5439-ZAnWDtd1_s.jpg",
+      "friend_name": "RANI KUMARI",
+      "friend_username": "kumarirani01",
+      "friend_location": ""
+    },
+    {
+      "friend_profile_pic": "pp-5602-Yi3TdKx2_s.jpg",
+      "friend_name": "Sapna Chhetri",
+      "friend_username": "sapnachhetri_04",
+      "friend_location": ""
+    },
+    {
+      "friend_profile_pic": "PS",
+      "friend_name": "Pooja Shukla",
+      "friend_username": "poojashukla",
+      "friend_location": "Noida, Uttar Pradesh, India"
+    },
+    {
+      "friend_profile_pic": "pp-5638-erFv0Bwk_s.jpg",
+      "friend_name": "Pranay Chauhan",
+      "friend_username": "pranay",
+      "friend_location": "Delhi, India"
+    },
+    {
+      "friend_profile_pic": "pp-5639-gKzDaM68_s.jpg",
+      "friend_name": "Rajvardhan Singh",
+      "friend_username": "rajvardhan",
+      "friend_location": "Faizabad, Uttar Pradesh, India"
+    }
+  ]
+}</pre>
+
+
+    <h2 id="section25">Change Email</h2>  
+    <p> Show recent Posts </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/change_email</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>email :{'new email'}</code><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          "stauts": 0,
+          "message": "Invalid token"
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "stauts": 1,
+          "message": "Your request to change email is being processed. Please verify your new email address to complete the process."
+        }
+    </pre>
+
+    <hr>
+
+
+
+
+    <hr>
+
+    <h2 id="section26">Email Resend mail</h2>  
+    <p> Email Resend Mail </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/email_resend</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "stauts": 1,
+          "message": "Your request to change email is being processed. Please verify your new email address to complete the process."
+        }
+    </pre>
+
+    <hr>
+
+    <h2 id="section27">Change Password</h2>  
+    <p>Change Password</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/change_password</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization : {token key }</code><br>
+    <code>old_password :{'old_password'}</code><br>
+    <code>password :{'New password'}</code><br>
+    <code>password_conirm :{'New password'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass requests parameter but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          "stauts": 0,
+          "message": "Invalid token"
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "stauts": 1,
+          "message": "Your Password has been updated."
+        }
+    </pre>
+    <hr>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request but old password is incorrect  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "stauts": 0,
+          "message": "Incorrect Password."
+        }
+    </pre>
+    <hr>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user not pass old password </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "stauts": 0,
+          "message": "please paas your old password"
+        }
+    </pre>
+
+    <hr>
+
+
+
+    <h2 id="section28"><p> Change Username </p></h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/change_username</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>username :{'new username'}</code><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "status": 1,
+          "message": "Your username has been updated"
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and username was already registerd with other account  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "status": 0,
+          "message": "Username already exists."
+        }
+    </pre>
+
+    <hr>
+
+
+    <h2 id="section29"><p> Username Suggestions </p></h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/username_suggestions</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+            "status": 1,
+            "suggestions": [
+                                "chauhanpranay",
+                                "chauhan-pranay",
+                                "chauhanpranay1992",
+                                "chauhanpranay07"
+                            ]
+        }
+    </pre>
+
+    <hr>
+
+    <h2 id="section30"><p>Friends list</p></h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+  "status": 1,
+  "message": "friends list",
+  "friends": [
+    {
+      "friend_profile_pic": "https://www.callitme.com/upload/pp-20-Jxpb4tL2_s.jpg",
+      "friend_name": "Pankaj Shrivastav",
+      "friend_username": "pankaj-shrivastav",
+      "number_of_friends": "37 friends",
+      "friend_location": "Melbourne, Victoria, Australia"
+    },
+    {
+      "friend_profile_pic": "DS",
+      "friend_name": "Diksha Shrivastava",
+      "friend_username": "diksha",
+      "number_of_friends": "2 friends",
+      "friend_location": "Delhi, India"
+    }
+  ]
+}
+    </pre>
+
+    <hr>
+
+
+    <h2 id="section31"><p>Incoming Friends Requests</p></h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi/requests</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass username but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token and user have incoming requests </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>
+        {
+  "status": 1,
+  "message": "Friends List ",
+  "friends request": [
+    {
+      "request_friend_pic": "mk",
+      "request_friend_user_id": "5828",
+      "request_friend_username": "meerakhaan1991",
+      "request_friend_name": "meera khaan",
+      "request_friend_location": "Delhi, India",
+      "request_friend_sex": "Female",
+      "request_friend_phase_of_life": "Single"
+    }
+  ]
+}
+    </pre>
+
+    <hr>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token and user have no incoming requests </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+      "status": 0,
+      "message": "No Pending Friend Requests"
+    }</pre>
+
+    <hr>
+
+
+
+
+    <h2 id="section32"><p>Friends Requests sent user</p></h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi/requests_sent</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass  invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if  valid token and user sent requests </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>
+        {
+      "stauts": 1,
+      "message": "Friend request sent user fetch successfully.",
+      "requests_sent_user": [
+        {
+          "request_pic": "TW",
+          "request_name": "Tina Woo",
+          "request_email": "eunice_t_njainwwwa@yahoo.com",
+          "request_username": "TinaWoo05"
+        },
+        {
+          "request_pic": "LC",
+          "request_name": "Leticia Champ",
+          "request_email": "dmitriysami1@mail.ru",
+          "request_username": "ChampLeticia1983"
+        },
+        {
+          "request_pic": "OP",
+          "request_name": "Ona Pritchett",
+          "request_email": "gimadeeva1988@bk.ru",
+          "request_username": "Ona-Pritchett"
+        }
+  ]
+}
+    </pre>
+
+    
+
+    <hr>
+
+
+    <h2 id="section33"><p>Add friends or send friend request & Remove Friends or cancel friend request</p></h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi/add_friend</var><br>
+    <strong>Request Parameter :</strong><br>
+
+    <code>if you want to add friend only pass <br> friend_id :{user id of user }</code><br>
+    <code>if you want to remove friend request only pass <br> del_req :{user id of user }</code><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass  invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if  valid token and user send requests and pass friend_id </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>
+        {
+  "status": 1,
+  "message": "Friend Request Sent"
+}
+    </pre>
+
+    
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if  valid token and user delete requests and pass del_request </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>
+        {
+  "status": 1,
+  "message": "Removed Friend Request"
+}
+    </pre>
+
+    
+
+    <hr>
+
+    <h2 id="section34">Friend Request Accept</h2>  
+    <p> Friend Request Accept </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi/accept_friend</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>friend_id :{'Valid user id'}</code><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass user id but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "status": 1,
+          "message": "Friend Request Accepted"
+        }
+    </pre>
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if you pass invalid user id and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "status": 0,
+          "message": "Request valid user id"
+        }
+    </pre>
+
+    <hr>
+
+
+    <h2 id="section35">Friend Request Reject</h2>  
+    <p> Friend Request Accept </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi/reject_request</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>friend_id :{'Valid user id'}</code><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass user id but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "status": 1,
+          "message": "Friend Request Rejected"
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if you pass invalid user id and valid token  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+          "status": 0,
+          "message": "Error Occured ! Request valid user id"
+        }
+    </pre>
+
+    <hr>
+
+
+    <h2 id="section36">Friend Request notification</h2>  
+    <p>Friend Request notification </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/friendsapi/friends_for_noti</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass user id but invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token and have requests </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+      "status": 1,
+      "message": "request user fetch successfully",
+      "friends request": [
+        {
+          "name": "munmunsingh",
+          "request_proile_pic": "ms",
+          "user_id": "5829",
+          "username": "munmun-singh",
+          "location": "",
+          "sex": "male",
+          "phase_of_life": "Single"
+        }
+      ]
+    }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if you valid token and have no request  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+        <pre>{
+      "status": 1,
+      "message": "No pending friend request."
+    }
+    </pre>
+
+    <hr>
+
+    <h2 id="section37">Message notification</h2>  
+    <p>Friend Request notification </p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/messageapi/messages_for_noti</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token and have requests </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>{
+  "status": 1,
+  "message": "successfully fetch",
+  "message_list": [
+    {
+      "proile_pic": "https://www.callitme.com/upload/pp-15-5cIvk4bs_m.jpg",
+      "name": "Romanch Sharma",
+      "username": "QKow0396Djt15",
+      "message": "Dasda...",
+      "time": "9th Dec"
+    },
+    {
+      "proile_pic": "https://www.callitme.com/upload/pp-20-Jxpb4tL2_m.jpg",
+      "name": "Pankaj Shrivastav",
+      "username": "pankaj-shrivastav",
+      "message": "Just checking api ...",
+      "time": "9th Dec"
+    },
+    {
+      "proile_pic": "DS",
+      "name": "Diksha Shrivastava",
+      "username": "diksha",
+      "message": "asd ds dsa dsa dsad s d...",
+      "time": "9th Dec"
+    }
+  ]
+}
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if you valid token and have no request  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+        <pre>{
+              "status": 1,
+              "message": "No messages."
+            }
+    </pre>
+
+    <hr>
+
+
+    <h2 id="section38">Notification Access</h2>  
+    <p>Notification Access</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/activity_notification</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token and having some notification </span></h4>
+    <br>
+    <code>Response :</code>
+    
+    <pre>
+        {
+  "status": 1,
+  "message": "fetch successgully",
+  "noti": [
+    {
+      "href": "https://www.callitme.com/munmun-singh",
+      "activity_type": "profile_view",
+      "profile_pic": "ms",
+      "activity1": "munmun singh has viewed your profile",
+      "time": "1h ago"
+    },
+    {
+      "href": "https://www.callitme.com/meerakhaan1991",
+      "activity_type": "profile_view",
+      "profile_pic": "mk",
+      "activity1": "meera khaan has viewed your profile",
+      "time": "23h ago"
+    },
+    {
+      "href": "https://www.callitme.com/pankaj-shrivastav",
+      "activity_type": "profile_view",
+      "profile_pic": "https://www.callitme.com/upload/pp-20-Jxpb4tL2_m.jpg",
+      "activity1": "Pankaj Shrivastav has viewed your profile",
+      "time": "15th Dec"
+    },
+    {
+      "href": "https://www.callitme.com/peoplereview/recommend_request/",
+      "activity_type": "askreview",
+      "profile_pic": "AS",
+      "activity1": "Amita Singh  has requested for a review",
+      "time": "14th Dec"
+    },
+    {
+      "href": "https://www.callitme.com/peoplereview/recommend_recieve",
+      "activity_type": "new_recommend",
+      "profile_pic": "https://www.callitme.com/upload/pp-3330-Cp4vrYmx_m.jpg",
+      "activity1": "Shefali Singh  has reviewed you",
+      "time": "14th Dec"
+    },
+    {
+      "href": "https://www.callitme.com/peoplereview/recommend_recieve",
+      "activity_type": "new_recommend",
+      "profile_pic": "DS",
+      "activity1": "Diksha Shrivastava  has reviewed you",
+      "time": "14th Dec"
+    },
+    {
+      "href": "https://www.callitme.com/diksha",
+      "activity_type": "profile_view",
+      "profile_pic": "DS",
+      "activity1": "Diksha Shrivastava has viewed your profile",
+      "time": "14th Dec"
+    },
+    {
+      "href": "https://www.callitme.com/members/view_post/1193",
+      "activity_type": "recommend",
+      "profile_pic": "https://www.callitme.com/upload/pp-20-Jxpb4tL2_m.jpg",
+      "activity1": "Pankaj Shrivastav  is reviewed by <a href=\"pranay\">you</a>",
+      "time": "13th Dec"
+    }
+  ]
+}
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if you valid token and have no notification  </span></h4>
+    <br>
+    <code>Response :</code>
+    
+        <pre>{
+              "status": 0,
+              "message": "No new notification."
+            }
+    </pre>
+
+    <hr>
+    <h2 id="section39">Find User</h2>  
+    <p>User Filter Email</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/find_user</var><br>
+    <strong>Request Parameter :</strong><br>
+    <code>Authorization :{'Valid token'}</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass invalid token</span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>
+        {
+          'status':0,
+          'message':'Invalid token.'
+        }
+    </pre>
+
+    <hr>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> if user pass all request and valid token and search a user </span></h4>
+    <br>
+    <code>Response :</code>
+    <pre>{
+  "Status": "1",
+  "Filter Register User Email": [
+    {
+      "Profile_pic": "PG",
+      "Name": "Prasanna  Gunaseelan ",
+      "User Email": "gunaseelan.Prasanna@gmail.com",
+      "Social %": 0,
+      "Location": "Chennai "
+    },
+    {
+      "Profile_pic": "https://www.callitme.com/upload/pp-3304-kT2yXIfy_s.jpg",
+      "Name": "Pranay singh Chauhan",
+      "User Email": "pchauhan@maangu.com",
+      "Social %": 80,
+      "Location": "Delhi, India"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Pramisha Sharma",
+      "User Email": "prati_br@yahoo.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PA",
+      "Name": "Praay Asd",
+      "User Email": "adminmaangu@gmail.com",
+      "Social %": 50,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PK",
+      "Name": "Prashant Kumar",
+      "User Email": "rahulofmaangu@gmail.com",
+      "Social %": 0,
+      "Location": "New Delhi, Delhi, India"
+    },
+    {
+      "Profile_pic": "PT",
+      "Name": "Pranay Thakur",
+      "User Email": "pranay@yahoo.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PA",
+      "Name": "Prks Awasthi",
+      "User Email": "prakashawasthi82@gmail.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PD",
+      "Name": "Pradip Dahal",
+      "User Email": "hless266@gmail.com",
+      "Social %": 0,
+      "Location": "Kathmandu"
+    },
+    {
+      "Profile_pic": "SR",
+      "Name": "Samar Rokka",
+      "User Email": "pramishaale99@gmail.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PR",
+      "Name": "Prabhu Rajak",
+      "User Email": "prabhurajak27@gmail.com",
+      "Social %": 0,
+      "Location": "Besisahar, Western Region, Nepal"
+    },
+    {
+      "Profile_pic": "PG",
+      "Name": "Praveen Goyal",
+      "User Email": "rajamitgoyal@gmail.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "https://www.callitme.com/upload/pp-4319-9eRlGNyj_s.jpg",
+      "Name": "Prakash Kc",
+      "User Email": "lit.prakashkc91@gmail.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "MB",
+      "Name": "Madhab Bhattarai",
+      "User Email": "prabeshb30@yahoo.com",
+      "Social %": 0,
+      "Location": "South Korea"
+    },
+    {
+      "Profile_pic": "PP",
+      "Name": "Prash P",
+      "User Email": "pacific.mahajan@gmail.com",
+      "Social %": 0,
+      "Location": "Delhi, India"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Prakash Shrestha",
+      "User Email": "rahul123266@gmail.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "pt",
+      "Name": "prakash tiwari",
+      "User Email": "prakashjacktiwari@gmail.com",
+      "Social %": 0,
+      "Location": "hetauda"
+    },
+    {
+      "Profile_pic": "UP",
+      "Name": "Urmila Prajapati",
+      "User Email": "prajapati.uru55@gmail.com",
+      "Social %": 0,
+      "Location": "Bhaktapur"
+    },
+    {
+      "Profile_pic": "PD",
+      "Name": "Pradip Dhakal",
+      "User Email": "pdhakal407@gmail.com",
+      "Social %": 0,
+      "Location": "Kathmandu, Central Region, Nepal"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Prabhat Subedi",
+      "User Email": "subediprabhat@gmail.com",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "https://www.callitme.com/upload/pp-5638-Lb69ZVnp_s.jpg",
+      "Name": "Pranay Chauhan",
+      "User Email": "psingh@apprit.com",
+      "Social %": 0,
+      "Location": "Delhi, India"
+    },
+    {
+      "Profile_pic": "ps",
+      "Name": "pranay123 singh",
+      "User Email": "p45sinfh@kajsbd.kjn",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PA",
+      "Name": "Pranaydeep Admin",
+      "User Email": "pranaydeepsingh@gmail.com",
+      "Social %": 0,
+      "Location": "Denver, CO, United States"
+    },
+    {
+      "Profile_pic": "PC",
+      "Name": "Pranaydeepsingh Chauhan",
+      "User Email": "pranaysinghchauhan@maangu.com",
+      "Social %": 0,
+      "Location": "Denver, CO, United States"
+    },
+    {
+      "Profile_pic": "https://www.callitme.com/upload/pp-5688-N6AjJ3VD_s.jpg",
+      "Name": "Pranay Sdnasjdnkasdn",
+      "User Email": "aaaadmin@fmail.com",
+      "Social %": 0,
+      "Location": "Edmonton, AB, Canada"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Pranay Singh",
+      "User Email": "prachadeep@gmail.com",
+      "Social %": 0,
+      "Location": "Delhi, LA, United States"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Pranay Singh",
+      "User Email": "popra@gmail.com",
+      "Social %": 0,
+      "Location": "Denver, CO, United States"
+    },
+    {
+      "Profile_pic": "MS",
+      "Name": "Munmun Singh",
+      "User Email": "pramunmun@apprit.com",
+      "Social %": 0,
+      "Location": "The Hague, Netherlands"
+    },
+    {
+      "Profile_pic": "DA",
+      "Name": "Dasdd Asdasdsad",
+      "User Email": "pranay@maapprit.com",
+      "Social %": 0,
+      "Location": "Denver, CO, United States"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Pranay Singh",
+      "User Email": "pranaychauhan992@gmailhp.com",
+      "Social %": 0,
+      "Location": "Denver, CO, United States"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Pranay Singh",
+      "User Email": "support123@maangu.com",
+      "Social %": 0,
+      "Location": "Denver, CO, United States"
+    },
+    {
+      "Profile_pic": "Pt",
+      "Name": "Pranay trump",
+      "User Email": "trupmuasdk@ajbsd.asdkjn",
+      "Social %": 0,
+      "Location": "Washington, DC, United States"
+    },
+    {
+      "Profile_pic": "PS",
+      "Name": "Pranay Sinfh",
+      "User Email": "pra22pra@gmail.com",
+      "Social %": 0,
+      "Location": "SDF Block, K- 9, Noida, Uttar Pradesh, India"
+    }
+  ]
+}</pre>
+    <hr>
+
+    <h2 id="section40">Round Api</h2>
+    <p>User Round Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Dislike =>Valid Token,radius</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user search  a round member.</span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/roundapi/</var><br>
+    <code>Response :</code>
+    <pre>{
+  "Show_round_member": {
+    "count": 18,
+    "users": [
+      {
+        "id": "3321",
+        "url": "https://www.callitme.com/rajneeshsrivastav",
+        "recommend_url": "https://www.callitme.com/peoplereviewapi/compose?ask=rajneeshsrivastav",
+        "message_url": "https://www.callitme.com/messageapi/compose?user=rajneeshsrivastav",
+        "request_url": "https://www.callitme.com/rajneeshsrivastav",
+        "friend_url": "https://www.callitme.com/rajneeshsrivastav",
+        "friend": "not_friends",
+        "lat": "28.6667",
+        "long": "77.2167",
+        "name": "Rajneesh Srivastav",
+        "image": "https://www.callitme.com/upload/pp-3321-lnt5SYWJ_s.jpg",
+        "username": "rajneeshsrivastav",
+        "age": 22,
+        "gender": "Male"
+      }
+    ]
+  }
+}</pre>
+    <hr>
+<h2 id="section41">Send Success</h2>
+    <p>User Send Success Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Send Success =>Valid Token</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user send success review.</span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/send_success/</var><br>
+    <code>Response :</code>
+    <pre>{
+  "Status": "1",
+  "Review More People": [
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar5.png",
+      "Name": "Josefina Shears",
+      "Status": "Male",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=JosefinaShears1989"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar2.png",
+      "Name": "Maynard Vandiver",
+      "Status": "Female",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=VandiverMaynard1972"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar2.png",
+      "Name": "Komal Singal",
+      "Status": "Female, Married",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=rEYWOgXJ94G3178"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar5.png",
+      "Name": "Rowena Trudel",
+      "Status": "Male",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=TrudelRowena1983"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar5.png",
+      "Name": "Annette Earp",
+      "Status": "Male",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=EarpAnnette1976"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar5.png",
+      "Name": "Dewey Mahmood",
+      "Status": "Male",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=Mahmood-Dewey"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar2.png",
+      "Name": "Raymon Hutcheon",
+      "Status": "Female",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=HutcheonRaymon"
+    },
+    {
+      "profile_pic": "http://localhost/callitme/upload/avatar5.png",
+      "Name": "Edgardo Bertles",
+      "Status": "Male",
+      "Review": "http://localhost/callitme/peoplereviewapi/compose?ask=EdgardoBertles02"
+    }
+  ]
+}</pre>
+    <hr>
+    <h2 id="section42">Compose Api</h2>
+    <p>User compose Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Compose =>Valid Token</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user compose review.</span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/compose?ask=TrudelRowena1983</var><br>
+    <code>Response :</code>
+    <pre>{
+          "Status": "1",
+          "Email": "aleciasminkxwo@yahoo.com",
+          "User": "Rowena Trudel"
+        }</pre>
+    <hr>
+
+    <h2 id="section43">Recommend Request Api</h2>
+    <p>User Recommend Request Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Recommend Request =>Valid Token</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user Recommend Request review.</span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/peoplereviewapi/recommend_request</var><br>
+    <code>Response :</code>
+    <pre>{
+          "status": 1,
+          "message": "No one has requested a review from you."
+        }</pre>
+    <hr>
+    <h2 id="section44">Public Profile Search</h2>
+    <p>User Public Profile Search Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Public Profile =>Valid Token,first_name,last_name</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user search public proflie </span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/search_result?first_name=pradeep&last_name=goswami</var><br>
+    <code>Response :</code>
+    <pre>{"number_of_user":1,"Status":"1","search_result":[{"Profile_pic":"Pradeep Goswami","Name":"Pradeep Goswami","Lives_in":"Meerut, Uttar Pradesh, India","Website":"www.Callitme.com\/goswamipradeep1990","Social_percent":55,"Friends":"12","Review":2,"phase_of_life":"Web , Single, MCA"}]}</pre>
+    <hr>
+    <h2 id="section45">Profile Check Out</h2>
+    <p>User Profile Check Out Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Public Profile =>Valid Token,user_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user Profile Check Out </span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/profile_check_out?user_id=3306</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","Profile_check_out_user":[{"Profile_pic":"https:\/\/www.callitme.com\/desktop-test\/upload\/pp-13-h9JllU6I_s.jpg","Name":"Gunjan Shrivastav","User_Sex":"Female","Social_percent":80,"phase_of_life":"Married"},{"Profile_pic":"RS","Name":"Roberto Stagg","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"PL","Name":"Pedro Lemberg","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"HM","Name":"Heidi Mario","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"CM","Name":"Calvin Mendes","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"GB","Name":"Grace Byrne","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"SL","Name":"Sweta Loh","User_Sex":"Female","Social_percent":0,"phase_of_life":"Single"},{"Profile_pic":"MT","Name":"Miquel Tye","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"LS","Name":"Latashia Sells","User_Sex":"Female","Social_percent":0,"phase_of_life":""},{"Profile_pic":"CS","Name":"Corey Strempel","User_Sex":"Female","Social_percent":0,"phase_of_life":""}]}</pre>
+    <hr>
+    <h2 id="section46">Email Notification</h2>
+    <p>User emailnotification Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Email Notification =>Valid Token,user_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user emailnotification </span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/emailnotification?user_id=3306&rec_alert=1&req_alert=1&msg_alert=1&friend_alert=1&join_alert=1&profile_alert=1&friend_request_alert=1&meet_people_alert=1&suggestion_email_alert=1&profile_information_alert=1&photo_alert=1&friend_email_alert=1</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","success":"Your settings have been updated","req_alert":1,"msg_alert":1,"rec_alert":1,"friend_alert":1,"join_alert":1,"profile_alert":1,"friend_request_alert":1,"meet_people_alert":1,"suggestion_email_alert":1,"profile_information_alert":1,"photo_alert":1,"friend_email_alert":1}</pre>
+    <hr>
+    <h2 id="section47">Privacy Settings</h2>
+    <p>User privacy_settings Api</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Privacy Settings =>Valid Token,user_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user privacy_settings </span></h4>
+    <code>URL:</code>
+    <var>https://www.callitme.com/accessapi/privacy_settings?user_id=3306&friends_private=1&reviews_private=1&people_say_private=1</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","success":"privacy_settings","friends_private":1,"reviews_private":1,"people_say_private":1}</pre>
+    <hr>
+    <!--<h2 id="section3">User Register</h2>  
+    <p>When user register in our website</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request  Parameter :</strong><br>
+    <code>targetwedding :{'select only calendar date not user input type'}</code><br>
+    <code>first_name :{'type only characters and first latter is capital only english not hindi'}</code><br>
+    <code>last_name :{'type only characters and first latter is capital only english not hindi'}</code><br>
+    <code>sex :{'Male|Female'}</code><br>
+    <code>marital_status = 1 :{'For Example: array(1=>'single',2=>'Seperated',3=>'Divorced',4=>'Widowed',5=>'Annulled')'}</code></br>
+    <code>birthday :</code><br>
+    <code>email :{'abc@gmail.com'}</code><br>
+    <code>password :{'*****'}</code><br>
+    <code>location :{'select only google api location not user input type'},for example :{'Delhi,New Delhi,India'}</code><br>
+    <code>phone_number :{'maxlength 10 integer digit not characters of mobile no.'}</code><br>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fil all input text field</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"All fields are required."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fil correct google location</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"Please choose a proper location."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user age less then 18</span></h4>
+    <code>Response :</code>
+    <pre>{"age_not_valid":"We are sorry, but you must be at least 18 years or older to use this Web Site. Come back once your hit 18!"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register same email</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"This email has already been registered."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register same phone number</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"This phone number has already been registered."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user register and fill all required information</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/index? targetwedding=March 2018&first_name=Raheel&last_name=Arshad&sex=Male&marital_status=1&birthday=1788-02-30&
+    email=raheelpak@gmail.com&password=123456&location=Lohar ,Pakistan&phone_number=1234567891
+    </var><br>
+    <code>Response :</code>
+    <pre>{"success":"1","message":"signup successfully","Member_id":2155}</pre>
+    <hr>
+    <h2 id="section4">User Profile Information</h2>  
+    <p>When user complete first step register in our website.then goto second ster profile information.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>height = 1:{'For Example array(1=>"4' 0'' (121 cm)",2=>"4' 1'' (124 cm)",3=>"4' 2'' (127 cm)",4=>"4' 3'' (129 cm)")'}</code><br>
+    <code>complexion = 1:{'For Example array(1=>'Fair',2=>'Medium',3=>'Dark',4=>'Wheatish')'}</code><br>
+    <code>built = 1: {'For Example array(1=>'Slim',2=>'Average',3=>'Athletic',4=>'Heavy')'}</code><br>
+    <code>smoke = 1: {'For Example array(1=>'Yes',2=>'No')'}</code><br>
+    <code>drink = 1: {'For Example array(1=>'Yes',2=>'No')'}</code><br>
+    <code>native_language = 1: {'For Example array(1=>'Avadhi',2=>'Assamesc',3=>'Bengali',4=>'Bhojpuri')'}</code><br>
+    <code>mangalik = 1:{'For Example array(1=>'Yes',2=>'No')'}</code><br>
+    <code>diet = 1 : {'For Example array(1=>'Veg',2=>'Non-Veg')'}</code><br>
+    <code>religion =1:{'For Example array(1=>'Hinduism',2=>'Buddhism',3=>'Sikhism',4=>'Christianity',5=>'Islam',6=>'Judaism',7=>'Jainism',8=>'No Religion')'}</code><br>
+    <code>caste =1 :{'For Example array(1=>'Brahman',2=>'Kayastha',3=>'Kshatriya',4=>'Sudra',5=>'Vaishya',6=>'Not Applicable')'}</code><br>
+    <code>birth_place : {'select only google api location not user input type'}</code><br>
+    <code>education = 1 :{'For Example array{1=>'Below High School',2=>'High School',3=>'Bachelors',4=>'Masters',5=>'Doctorate'}'}</code><br>
+    <code>institute :</code><br>
+    <code>profession :</code><br>
+    <code>salary_nation = 1:{'For Example 1=>'$',2=>'Rs'}</code><br>
+    <code>salary :{'type only integer digit not characters'}</code><br>
+    <code>about_me</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fill all input text field.</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"Please fill all the fields."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user fill all input text field</span></h4>
+    <code>URL:</code>
+    <pre><var>https://www.maangu.com/mobile-test/maanguapi/profile_info?member_id=2155&height=3&complexion=2&built=1&smoke=1&drink=1&native_language=2&mangalik=1&diet=1&religion=1&caste=2&birth_place=delhi&education=3&institute=delhi%20university&profession=2&salary_nation=2&salary=500000&about_me=good</var><br></pre>
+    <code>Response :</code>
+    <pre>{"Status":"Insert Data","Member_Profile_Id":"2155","toastr_success":"Your profile details have been updated. Now, please take a moment \\\n  to check your partner details."}
+    </pre>
+    <hr>
+   <h2 id="section5">User Profile Partner Information</h2>  
+    <p>When user complete Profile information.then goto Partner information.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>age_min : </code><br>
+    <code>age_max : </code><br>
+    <code>height_min = 1:{'For Example array(1=>"4' 0'' (121 cm)",2=>"4' 1'' (124 cm)",3=>"4' 2'' (127 cm)",4=>"4' 3'' (129 cm)")'}</code><br>
+    <code>height_max = 1:{'For Example array(1=>"4' 0'' (121 cm)",2=>"4' 1'' (124 cm)",3=>"4' 2'' (127 cm)",4=>"4' 3'' (129 cm)")'}</code><br>
+    <code>complexion = 1:{'For Example array(1=>'Fair',2=>'Medium',3=>'Dark',4=>'Wheatish','D'=>'Don\'t Care')'}</code><br>
+    <code>built = 1: {'For Example array(1=>'Slim',2=>'Average',3=>'Athletic',4=>'Heavy','D'=>'Don\'t Care')'}</code><br>
+    <code>smoke = 1: {'For Example array(1=>'Yes',2=>'No','D'=>'Don\'t Care')'}</code><br>
+    <code>drink = 1: {'For Example array(1=>'Yes',2=>'No','D'=>'Don\'t Care')'}</code><br>
+    <code>mangalik = 1:{'For Example array(1=>'Yes',2=>'No','D'=>'Don\'t Care')'}</code><br>
+    <code>diet = 1 : {'For Example array(1=>'Veg',2=>'Non-Veg','D'=>'Don\'t Care')'}</code><br>
+    <code>religion =1:{'For Example array(1=>'Hinduism',2=>'Buddhism',3=>'Sikhism',4=>'Christianity',5=>'Islam',6=>'Judaism',7=>'Jainism',8=>'No Religion','D'=>'Don\'t Care')'}</code><br>
+    <code>caste =1 :{'For Example array(1=>'Brahman',2=>'Kayastha',3=>'Kshatriya',4=>'Sudra',5=>'Vaishya',6=>'Not Applicable','D'=>'Don\'t Care')'}</code><br>
+    <code>location :{'select only google api location not user input type'},for example :{'Delhi,New Delhi,India'}</code><br>
+    <code>education = 1 :{'For Example array(1=>'Below High School',2=>'High School',3=>'Bachelors',4=>'Masters',5=>'Doctorate','D'=>'Don\'t Care')'}</code><br>
+    <code>institute :</code><br>
+    <code>profession :</code><br>
+    <code>salary_nation = 1:{'For Example 1=>'$',2=>'Rs'}</code><br>
+    <code>salary_min :{'type only integer digit not characters'}</code><br>
+    <code>salary_max :{'type only integer digit not characters'}</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fill all input text field.</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"Please fill all the fields. "}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fil correct google location.</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"Please choose a proper location."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User partner Maximum age should be greater than minimum age.</span></h4>
+    <code>Response :</code>
+    <pre>{"Error":0,"age_range":"Maximum age should be greater than minimum age."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User partner Maximum height should be greater than minimum height.</span></h4>
+    <code>Response :</code>
+  <pre>{"Error":0,"Height range":"Maximum height should be greater than minimum height."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user fill all input text field.</span></h4>
+    <code>URL:</code>
+    <pre><var>:https://www.maangu.com/mobile-test/maanguapi/profile_partner?member_id=2155&age_min=5&age_max=6&height_min=6&height_max=8&caste=2&location=noida&diet=1&complexion=1&built=1&marital_status=2&smoke=1&drink=1&religion=3&mangalik=1&education=4&profession=designer&salary_nation=1&salary_min=200000&salary_max=300000</var><br></pre>
+    <code>Response :</code>
+    <pre>{"Status":"Insert Data","Partner Info":539,"toastr_success":"You have updated your desired partner details. Now, please see if you have uploaded \\\n  your beautiful photos. You can add one profile photo and three additional photos. Make sure your face is clearly visible. \\\n  Pictures containing anything other than yourself are not allowed and will be deleted by the system."}</pre>
+    <hr>
+    <h2 id="section6">Select Username</h2>
+    <p>When user complete Partner Profile information.then goto select username.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>username : </code><br>
+    <code>member_id : </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user select first time username.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/select_username?member_id=838&username=pradeep</var><br>
+    <code>Response :</code>
+    <pre>{"maanguusername":"Your Username has been updated. Now your profile \\\n can be viewed and searched by your Username.","Status":"TRUE"}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user username have already.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/select_username?member_id=2155&username=pradeep</var><br>
+    <code>Response :</code>
+    <pre>{"Usernameerror":"This Username is already taken. Please select something else.","Status":"False"}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user update username.</span></h4>
+    <code>Response :</code>
+    <pre>{"toastr_success":"Your Username has been updated. Now your profile \\\n can be viewed and searched by your Username."}</pre>
+    <hr>
+
+    <h2 id="section7">Callitme Username</h2>
+    <p>If user have callitme username.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>ipintoo_username : </code><br>
+    <code>member_id : </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user have callitme username is active.</span></h4>
+    <code>Response :</code>
+    <pre>{"callitme_username":"your callitme username is activated"}</pre>
+    <hr>
+
+    <h2 id="section8">Profile Picture</h2>
+    <p>When user complete registration then goto upload profile pic.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>member_id : </code><br>
+    <code>picture: </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User upload profile picture.</span></h4>
+    <code>Response :</code>
+    <pre>:{"id":"275","path":null,"profile_pic":"pp-838-oC8jxHQT.jpg","picture1":"picture1-1463555745.jpg","picture2":"picture2-1466594513.jpg","picture3":"picture3-1469619908.jpg","profile_pic_s":"pp-838-oC8jxHQT_s.jpg","profile_pic_m":"pp-838-oC8jxHQT_m.jpg","profile_pic_o":""}</pre>
+    <hr>
+
+    <h2 id="section9">User add three photos</h2>
+    <p>user add three photos.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>member_id : </code><br>
+    <code>picture: </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User upload one photos.</span></h4>
+    <h6>Note : in parameter keep picture = 1 in hidden field for add one photos</h6>
+    <code>Response :</code>
+    <pre>:picture1-1474623069.jpg{"id":"275","path":null,"profile_pic":"pp-838-oC8jxHQT.jpg","picture1":"picture1-1474623069.jpg","picture2":"picture2-1466594513.jpg","picture3":"picture3-1469619908.jpg","profile_pic_s":"pp-838-oC8jxHQT_s.jpg","profile_pic_m":"pp-838-oC8jxHQT_m.jpg","profile_pic_o":""}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User upload second photos.</span></h4>
+    <h6>Note : in parameter keep picture = 2 in hidden field for upload second photos</h6>
+    <code>Response :</code>
+    <pre>:picture2-1474623474.jpg{"id":"275","path":null,"profile_pic":"pp-838-oC8jxHQT.jpg","picture1":"picture1-1474623426.jpg","picture2":"picture2-1474623474.jpg","picture3":"picture3-1469619908.jpg","profile_pic_s":"pp-838-oC8jxHQT_s.jpg","profile_pic_m":"pp-838-oC8jxHQT_m.jpg","profile_pic_o":""}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> user upload third photos.</span></h4>
+    <h6>Note : in parameter keep picture = 3 in hidden field for upload third photos</h6>
+    <code>Response :</code>
+    <pre>:picture3-1474623560.jpg{"id":"275","path":null,"profile_pic":"pp-838-oC8jxHQT.jpg","picture1":"picture1-1474623426.jpg","picture2":"picture2-1474623474.jpg","picture3":"picture3-1474623560.jpg","profile_pic_s":"pp-838-oC8jxHQT_s.jpg","profile_pic_m":"pp-838-oC8jxHQT_m.jpg","profile_pic_o":""}</pre>
+    <hr>
+
+    <h2 id="section10">Firsttime use promodode</h2>
+    <p>When user complete register then use firsttime promocode.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>promocode : </code><br>
+    <code>member_id: </code><br>
+    <h6>Note : When user register complete first time  use promocode.</h6>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user use correct promocode.</span></h4>
+    <code>URL:</code>
+   
+    <var>https://www.maangu.com/mobile-test/maanguapi/firsttime_promodode?member_id=2155&promocode=Sept2016</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","Success":" Your Promo Code has been accepted."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user use incorrect promocode.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/firsttime_promodode?member_id=2155&promocode=Sept20165</var><br>
+    <code>Response :</code>
+    <pre>{"invalid_promo_error":"0","error":"Your Promo code is not valid. Please enter a new promo code or choose a plan below to make payment with your credit or debit card."}</pre>
+    <hr>
+
+    <h2 id="section11">Home pages activities</h2>
+    <p>user home page activities like as user post and user intersted_member show in the home page.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>member_id: </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User home page activities like (user post and user intersted_member).</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/home?member_id=838</var><br>
+    <code>Response :</code>
+    <pre>{
+                        'success':'1',
+                        'intersted_member':[
+                                                
+                            {
+                                    'profile_pic':'pp-64-XKc6UFwm.jpg',
+                                    'first_name':'Tofa',
+                                    'last_name':'Yadav',
+                                    'mage':'33',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Gulariya Municipality, Mid-Western Region, Nepal'
+                            },
+                            {
+                                    'profile_pic':'pp-325-M4rWcw9H.jpg',
+                                    'first_name':'Bhavya',
+                                    'last_name':'Sahay',
+                                    'mage':'24',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'New Delhi, Delhi, India'
+                            },
+                            {
+                                    'profile_pic':'pp-723-Dyr1RJn7.jpg',
+                                    'first_name':'Simar',
+                                    'last_name':'Dhillon',
+                                    'mage':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Bangalore, Karnataka, India'
+                            },
+                            {
+                                    'profile_pic':'pp-728-rt3Wr7TR.jpg',
+                                    'first_name':'Leena',
+                                    'last_name':'Kaur',
+                                    'mage':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'New York, NY, United States'
+                            },
+                            {
+                                    'profile_pic':'pp-779-ecAz69SU.jpg',
+                                    'first_name':'Kemi',
+                                    'last_name':'Amdalah',
+                                    'mage':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'New York, Ã‰tat de New York, Ã‰tats-Unis'
+                            }
+                                            ],
+                        'posts':[
+                                    {
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':'<a href="pradeepgoswami">Pradeep Goswami</a> wants to get married by December 2025.',
+                                    'post_time':'12th Sep at 11:55 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' wants to get married by 27/09/2018.',
+                                    'post_time':'3rd Sep at 01:54 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' is 4' 4'' (132 cm) tall.',
+                                    'post_time':'3rd Sep at 01:54 ',
+
+
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' is 4' 4'' (132 cm) tall.',
+                                    'post_time':'3rd Sep at 01:53 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' is 4' 4'' (132 cm) tall.',
+                                    'post_time':'3rd Sep at 01:53 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' is 4' 4'' (132 cm) tall.',
+                                    'post_time':'3rd Sep at 01:53 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' wants to get married by 27/09/2017.',
+                                    'post_time':'3rd Sep at 01:49 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' wants to get married by 27/09/2017.',
+                                    'post_time':'3rd Sep at 01:49 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' wants to get married by 27/09/2017.',
+                                    'post_time':'3rd Sep at 01:49 ',
+                                  },{
+                                    'profile_pic_s':'pp-838-oC8jxHQT_s.jpg',
+                                    'name':'Pradeep Goswami',
+                                    'last_name':'Amdalah',
+                                    'show_post':' wants to get married by 27/09/2017.',
+                                    'post_time':'3rd Sep at 01:49 ',
+                                  }
+                                ]
+                    }
+</pre>
+    <hr>
+    <h2 id="section12">User followers(User Interested In You)</h2>
+    <p>user intrested in you.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>member_id: </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> User interested in you.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/user_followers?member_id=838</var><br>
+    <code>Response :</code>
+    <pre>{
+                        'success':'1',
+                        'intersted_member':[
+                                                
+                            {
+                                    'profile_pic':'pp-19-Y1V9Triq_s.jpg',
+                                    'first_name':'Nikhil Monga',
+                                    'age':'26',
+                                    'sex':'Male',
+                                    'marital_status':'Single',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-21-jt0hSVOY_s.jpg',
+                                    'first_name':'Gunjan Shrivastav',
+                                    'age':'33',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Gulariya, Mid-Western Region, Nepal'
+                            }
+                            {
+                                    'profile_pic':'AS',
+                                    'first_name':'Anju Sing',
+                                    'age':'26',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'DS',
+                                    'first_name':'Dolly Singh',
+                                    'age':'22',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'ms',
+                                    'first_name':'monika sharma',
+                                    'age':'27',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Delhi, India'
+                            }
+                                            ]
+                    }</pre>
+    <hr>
+    <h2 id="section13">Followings(You Interested In Member)</h2>
+    <p>you interested in member.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>member_id: </code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> You interested in member.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/followings?member_id=838</var><br>
+    <code>Response :</code>
+    <pre>{
+                    'success':'1',
+                    'intersted_member':[
+                                          
+                            {
+                                    'profile_pic':'pp-28-6X6zLGzl_s.jpg',
+                                    'first_name':'Riti Patel',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Washington, DC, United States'
+                            }
+                            {
+                                    'profile_pic':'pp-43-OAUWOaW4_s.jpg',
+                                    'first_name':'Rajanee Srivastava',
+                                    'age':'27',
+                                    'sex':'Female',
+                                    'location':'Gulariya Municipality, Mid-Western Region, Nepal'
+                            }
+                            {
+                                    'profile_pic':'pp-64-XKc6UFwm_s.jpg',
+                                    'first_name':'Tofa Yadav',
+                                    'age':'33',
+                                    'sex':'Female',
+                                    'location':'Gulariya Municipality, Mid-Western Region, Nepal'
+                            }
+                            {
+                                    'profile_pic':'SB',
+                                    'first_name':'Swati Baheti',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'MS',
+                                    'first_name':'Mini Singh',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'RD',
+                                    'first_name':'Rachana Dhople',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'Mumbai, Maharashtra, India'
+                            }
+                            {
+                                    'profile_pic':'Ps',
+                                    'first_name':'Pankaj singh',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'RS',
+                                    'first_name':'Reema Sidhu',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'PK',
+                                    'first_name':'PUNAM  KACHHAWAHA',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-157-tlXo91fF_s.jpg',
+                                    'first_name':'Zoya Khan',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-189-vaB4f3le_s.jpg',
+                                    'first_name':'Inderpreet Kaur',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'Jalandhar, Punjab, India'
+                            }
+                            {
+                                    'profile_pic':'SD',
+                                    'first_name':'Sunita Dhali',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'DD',
+                                    'first_name':'Darwin Devio',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'PD',
+                                    'first_name':'Priya D',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Chennai, Tamil Nadu, India'
+                            }
+                            {
+                                    'profile_pic':'pp-469-I29gplHE_s.jpg',
+                                    'first_name':'Karishma Singh',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Toronto, ON, Canada'
+                            }
+                            {
+                                    'profile_pic':'pp-563-0UjOzm3q_s.jpg',
+                                    'first_name':'Rayan Mahmoud',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Essex, CT'
+                            }
+                            {
+                                    'profile_pic':'pp-583-ibEh8YTc_s.jpg',
+                                    'first_name':'Ranjana Asthana',
+
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Orissa, Odisha, India'
+                            }
+                            {
+                                    'profile_pic':'SS',
+                                    'first_name':'Shweta Shrivastava',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Mumbai, Maharashtra, India'
+                            }
+                            {
+                                    'profile_pic':'SJ',
+                                    'first_name':'Sneha Jha',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'PM',
+                                    'first_name':'Priya ManeDeshmukh',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-619-d78F8e8c_s.jpg',
+                                    'first_name':'Mauli Buch',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'RP',
+                                    'first_name':'Ria Patani',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Jaipur, Rajasthan, India'
+                            }
+                            {
+                                    'profile_pic':'RR',
+                                    'first_name':'Rathi RajaSekaran',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-640-kMVcxZ7O_s.jpg',
+                                    'first_name':'Uma Devi',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Hyderabad, Andhra Pradesh, India'
+                            }
+                            {
+                                    'profile_pic':'KA',
+                                    'first_name':'Kritika Agrawal',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Gorakhpur, Uttar Pradesh, India'
+                            }
+                            {
+                                    'profile_pic':'SP',
+                                    'first_name':'Sweta Patel',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-747-IljiOs3v_s.jpg',
+                                    'first_name':'D Sharma',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'San Diego, CA, United States'
+                            }
+                            {
+                                    'profile_pic':'ZP',
+                                    'first_name':'Zelma Perrett',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'VR',
+                                    'first_name':'Varun Reddy',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'San Francisco, CA, United States'
+                            }
+                            {
+                                    'profile_pic':'RS',
+                                    'first_name':'Rashmi Shrivastava',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-822-v3yH8kU0_s.jpg',
+                                    'first_name':'Rabi Kay',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'location':'Dakar, Senegal'
+                            }
+                            {
+                                    'profile_pic':'pp-874-94bY5jCr_s.jpg',
+                                    'first_name':'Anjali Patel',
+                                    'age':'22',
+                                    'sex':'Female',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'EP',
+                                    'first_name':'Elmo Parramore',
+                                    'age':'37',
+                                    'sex':'Female',
+                                    'location':'Panjim, Goa, India'
+                            }
+                            {
+                                    'profile_pic':'OM',
+                                    'first_name':'Otis Mitchel',
+                                    'age':'42',
+                                    'sex':'Female',
+                                    'location':'Mumbai, Maharashtra, India'
+                            }
+                            {
+                                    'profile_pic':'SP',
+                                    'first_name':'Sandra Pederson',
+                                    'age':'39',
+                                    'sex':'Female',
+                                    'location':'Mumbai, Maharashtra, India'
+                            }
+                            {
+                                    'profile_pic':'sr',
+                                    'first_name':'sadhan rajpoot',
+                                    'age':'23',
+                                    'sex':'Female',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-1743-ggfXyB5Q_s.jpg',
+                                    'first_name':'chaitaly mehta',
+                                    'age':'39',
+                                    'sex':'Female',
+                                    'location':'Mumbai, Maharashtra, India'
+                            }
+                            {
+                                    'profile_pic':'MK',
+                                    'first_name':'Madhavi Kumari',
+                                    'age':'39',
+                                    'sex':'Female',
+                                    'location':'Bangalore, Karnataka, India'
+                            }
+                            {
+                                    'profile_pic':'AS',
+                                    'first_name':'Anju Sing',
+                                    'age':'26',
+                                    'sex':'Female',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'DS',
+                                    'first_name':'Dolly Singh',
+                                    'age':'22',
+                                    'sex':'Female',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'ms',
+                                    'first_name':'monika sharma',
+                                    'age':'27',
+                                    'sex':'Female',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'RS',
+                                    'first_name':'Rimpy S',
+                                    'age':'31',
+                                    'sex':'Female',
+                                    'location':'Delhi, India'
+                            }
+                                        ]
+                    }</pre>
+    <hr>
+    <h2 id="section14">Account Setting</h2>
+    <p>User account details</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Email => email, member_id</code><br>
+    <code>For Username => username,member_id</code><br>
+    <code>For Update Password  => old_password, password, member_id</code><br>
+    <code>For CalltimeUserName => ipintoo_username, member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user want to change email.</span></h4>
+    <code>URL:</code>
+    <var>: https://www.maangu.com/mobile-test/maanguapi/account?email=pgoswami@apprit.com&member_id=838</var><br>
+    <code>Response :</code>
+    <pre>{"new_email_change":"Email id successfully changed","status":"1"}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user type same email.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/account?email=pgoswami@maangu.com&member_id=838</var><br>
+    <code>Response :</code>
+    <pre>{"error":"This email is already registered","status":"0"}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user want to change username.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/account?member_id=838&username=pradeepgoswami</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","toastr_success":"Your Username has been updated successfully."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user type same username of other user username.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/account?member_id=2155&username=pradeep</var><br>
+    <code>Response :</code>
+    <pre>{"Usernameerror":"This Username is already taken. Please select something else.","Status":"0"}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user want to change password.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/account?member_id=838&old_password=123456&password=12345</var><br>
+    <code>Response :</code>
+    <pre>{"success":"Your password has been updated", "status":"1"}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user type wrong password.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/account?member_id=838&old_password=123456&password=12345</var><br>
+    <code>Response :</code>
+    <pre>{"error":"Incorrect User Password.","status":"0"}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user callitme name is active.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/account?member_id=838&ipintoo_username=pradeep</var><br>
+    <code>Response :</code>
+    <pre>{"success":1,"message":"Callitme username updated successfully."}</pre>
+    <hr>
+    <h2 id="section15">User update profile information</h2>
+    <p>User update information.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>targetwedding</code><br>
+    <code>location</code><br>
+    <code>smoke</code><br>
+    <code>height</code><br>
+    <code>complexion</code><br>
+    <code>built</code><br>
+    <code>smoke</code><br>
+    <code>marital_status</code><br>
+    <code>native_language</code><br>
+    <code>religion</code><br>
+    <code>caste</code><br>
+    <code>diet</code><br>
+    <code>drink</code><br>
+    <code>mangalik</code><br>
+    <code>education</code><br>
+    <code>birth_place </code><br>
+    <code>institute</code><br>
+    <code>profession</code><br>
+    <code>salary_nation</code><br>
+    <code>salary</code><br>
+    <code>about_me</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fill all input text field.</span></h4>
+    <code>Response :</code>
+    <pre>{"error":1,"message":"Please fill all the fields. "}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user does not fil correct google location.</span></h4>
+    <code>Response :</code>
+    <pre> {"error":1,"message":"Please choose a proper location."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user fill all input type field.</span></h4>
+    <code>URL:</code>
+    <pre><var>https://www.maangu.com/mobile-test/maanguapi/edit_profile_info?member_id=838&targetwedding=March 2018&height=9&location=delhi&complexion=2&built=1&marital_status=1&native_language=1&religion=2&caste=1&diet=2&smoke=1&drink=2&mangalik=1&education=3&birth_place=meerut&institute=ccsuniversity&profession=teacher&salary_nation=1&salary=50000&about_me=fine</var><br></pre>
+    <code>Response :</code>
+    <pre>{"Status":"Update Data","Member_Profile_Id":"838","toastr_success":"Your profile details have been updated."}</pre>
+    <hr>
+
+    <h2 id="section16">User update partner profile information</h2>
+    <p>User update partner information.</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>age_min</code><br>
+    <code>age_max</code><br>
+    <code>height_min</code><br>
+    <code>height_max</code><br>
+    <code>country</code><br>
+    <code>marital_status</code><br>
+    <code>caste</code><br>
+    <code>religion</code><br>
+    <code>complexion</code><br>
+    <code>smoke</code><br>
+    <code>drink</code><br>
+    <code>education</code><br>
+    <code>profession</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> When you go to this link fii one field and go to enter button.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/edit_partner_data</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","Message":"Partner's complexion information updated successfully"}</pre>
+    <!-- <img src="<?php //echo url::base();?>assets/images/user4-128x128.jpg">
+    <hr>
+
+    <h2 id="section17">Send Message</h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>user_id</code><br>
+    <code>parent_id</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> When user send a message.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/send_mess</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","Success":"Your message has been sent."}</pre>
+    <img src="<?php echo url::base();?>assets/images/user4-128x128.jpg">
+    <hr>
+
+    <h2 id="section18">User msg replay</h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>to</code><br>
+    <code>parent_id</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> When user replay a message.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/user_msg_replay</var><br>
+    <code>Response :</code>
+    <pre>{"Status":"1","Success":"Your message has been sent."}</pre>
+   
+    <hr>
+
+    <h2 id="section19">Promo Code Use</h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>promocode</code><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user use is expire then use promocode.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/promo_code_use?member_id=838&promocode=Sept2016</var><br>
+    <code>Response :</code>
+    <pre>2016-10-12 23:59:59{"Status":"1","Success":"Your Promo Code has been accepted."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user already  use promocode .</span></h4>
+    <code>Response :</code>
+    <pre>{"used_promo_error":"0","Already Used Promocode":"You have already used this promo code. Please use a new promo code or choose a plan below to make a payment with your credit or debit card."}</pre>
+
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user use incorrect promocode.</span></h4>
+    <code>Response :</code>
+    <pre>{"Error":"0","invalid_promo_error":"Your Promo code is not valid. Please enter a new promo code or choose a plan below to make payment with your credit or debit card."}</pre>
+    <hr>
+
+    <h2 id="section20">You Might Be Intrested</h2>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>GET</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> user home page you might be interested activities like.</span></h4>
+    <code>URL:</code>
+    <var>https://www.maangu.com/mobile-test/maanguapi/you_might_be_intrested?member_id=838</var><br>
+    <code>Response :</code>
+    <pre>{
+                        'success':'1',
+                        'You might be intrested':[
+                                                
+                            {
+                                    'profile_pic':'KJ',
+                                    'first_name':'Komal Joshi',
+                                    'age':'30',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Jaipur, Rajasthan, India'
+                            }
+                            {
+                                    'profile_pic':'PS',
+                                    'first_name':'Prani S',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Perth, Western Australia, Australia'
+                            }
+                            {
+                                    'profile_pic':'KC',
+                                    'first_name':'Khushbu Choudhary',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Divorced',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'PG',
+                                    'first_name':'P GUMBER',
+                                    'age':'23',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-822-v3yH8kU0_s.jpg',
+                                    'first_name':'Rabi Kay',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Dakar, Senegal'
+                            }
+                            {
+                                    'profile_pic':'NO',
+                                    'first_name':'Neha Ohri',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'RS',
+                                    'first_name':'Reema Sidhu',
+                                    'age':'24',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'pp-43-OAUWOaW4_s.jpg',
+                                    'first_name':'Rajanee Srivastava',
+                                    'age':'27',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Gulariya Municipality, Mid-Western Region, Nepal'
+                            }
+                            {
+                                    'profile_pic':'SC',
+                                    'first_name':'Sangeeta Chauhan',
+                                    'age':'28',
+                                    'sex':'Female',
+                                    'marital_status':'Divorced',
+                                    'location':'New Delhi, Delhi, India'
+                            }
+                            {
+                                    'profile_pic':'AS',
+                                    'first_name':'Anju Sing',
+                                    'age':'26',
+                                    'sex':'Female',
+                                    'marital_status':'Single',
+                                    'location':'Delhi, India'
+                            }
+                                            ]
+                    }</pre>
+
+    <hr>
+    <h2 id="section21">Like and Dislike Member</h2>
+    <p>User like and dislike</p>
+    <h5 style="color:#0862d6">ATTRIBUTES</h5>
+    <hr>
+    <strong>Method</strong><br>
+    <code>POST</code><br>
+    <strong>Request Parameter :</strong><br>
+    <code>For Dislike => dislike,member_id</code><br>
+    <code>For Like    =>like , member_id</code><br>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user dislike a member.</span></h4>
+    <code>Response :</code>
+    <pre>{"Status":"1","Success":"Dislike Member."}</pre>
+    <h4><span class="glyphicon glyphicon-hand-right" style="color:#FF00FF;"> If user like a member.</span></h4>
+    <code>Response :</code>
+    <pre>{"Status":"1","Success":"Remove Dislike Member."}</pre>
+    <hr>
+
+    <h1>Note this type use array values</h1>
+    <code>'marital_status' => array(
+        1 => 'Single',
+        2 => 'Seperated',
+        3 => 'Divorced',
+        4 => 'Widowed',
+        5 => 'Annulled',
+        'D' => 'Don\'t Care',
+    ),
+    'diet' => array(
+        1 => 'Veg',
+        2 => 'Non-Veg',
+        'D' => 'Don\'t Care',
+    ),
+    'religion' => array(
+        1 => 'Hinduism',
+        2 => 'Buddhism',
+        3 => 'Sikhism',
+        4 => 'Christianity',
+        5 => 'Islam',
+        6 => 'Judaism',
+        7 => 'Jainism',
+        8 => 'No Religion',
+        'D' => 'Don\'t Care',
+    ),
+    'residency_status' => array(
+        1 => 'Citizen',
+        2 => 'Permanent Resident',
+        3 => 'Visa',
+        'D' => 'Don\'t Care',
+    ),
+    'education' => array(
+        1 => 'Below High School',
+        2 => 'High School',
+        3 => 'Bachelors',
+        4 => 'Masters',
+        5 => 'Doctorate',
+        'D' => 'Don\'t Care',
+    ),
+    'caste' => array(
+        1 => 'Brahman',
+        2 => 'Kayastha',
+        3 => 'Kshatriya',
+        4 => 'Sudra',
+        5 => 'Vaishya',
+        6 => 'Not Applicable',
+        'D' => 'Don\'t Care',
+    ),
+    'height' => array(
+        1 => "4' 0'' (121 cm)",
+        2 => "4' 1'' (124 cm)",
+        3 => "4' 2'' (127 cm)",
+        4 => "4' 3'' (129 cm)",
+        5 => "4' 4'' (132 cm)",
+        6 => "4' 5'' (134 cm)",
+        7 => "4' 6'' (137 cm)",
+        8 => "4' 7'' (139 cm)",
+        9 => "4' 8'' (142 cm)",
+        10 => "4' 9'' (144 cm)",
+        11 => "4' 10'' (147 cm)",
+        12 => "4' 11'' (149 cm)",
+        13 => "5' 0'' (152 cm)",
+        14 => "5' 1'' (154 cm)",
+        15 => "5' 2'' (157 cm)",
+        16 => "5' 3'' (160 cm)",
+        17 => "5' 4'' (162 cm)",
+        18 => "5' 5'' (165 cm)",
+        19 => "5' 6'' (167 cm)",
+        20 => "5' 7'' (170 cm)",
+        21 => "5' 8'' (172 cm)",
+        22 => "5' 9'' (175 cm)",
+        23 => "5' 10'' (177 cm)",
+        24 => "5' 11'' (180 cm)",
+        25 => "6' 0'' (182 cm)",
+        26 => "6' 1'' (185 cm)",
+        27 => "6' 2'' (187 cm)",
+        28 => "6' 3'' (190 cm)",
+        29 => "6' 4'' (192 cm)",
+        30 => "6' 5'' (195 cm)",
+        31 => "6' 6'' (197 cm)",
+        32 => "6' 7'' (200 cm)",
+        33 => "6' 8'' (202 cm)",
+        34 => "6' 9'' (205 cm)",
+        35 => "6' 10'' (207 cm)",
+        36 => "6' 11'' (2.10 cm)",
+        37 => "7' (213 cm) or More",
+    ),
+   'native_language' => array(
+        1  => "Avadhi",
+        2  => "",//"Akan",
+        3  => "",//"Amharic",
+        4  => "",//"Arabic",
+        5  => "Assamesc",
+        6  => "",//"Azeri",
+        7  => "",//"Baluchi",
+        8  => "Bengali",
+        9  => "Bhojpuri",
+        10 => "",//"Bork",
+        11 => "",//"Burmese",
+        12 => "",//"Byelorussian",
+        13 => "",// "Cantonese",
+        14 => "",//"Danish",
+        15 => "",//"Dzongkha",
+        16 => "English",
+        17 => "",//"French",
+        18 => "",//"Fula",
+        19 => "",//"Garhwali",
+        20 => "",//"German",
+        21 => "Gujarati",
+        22 => "",//"Hebrew",
+        23 => "Hindi",
+        24 => "Kannada",
+        25 => "Kashmiri",
+        26 => "",//"Khmer",
+        27 => "Konkani",
+        28 => "",//"Lithunian",
+        29 => "",//"Malay",
+        30 => "Malayalam",
+        31 => "Maithali",
+        32 => "Manipuri",
+        33 => "Marathi",
+        34 => "Marwari",
+        35 => "Nepali",
+        36 => "Oriya",
+        37 => "",//"Pashto",
+        38 => "",//"Persian",
+        39 => "Punjabi",
+        40 => "Sanskrit",
+        41 => "",//"Siamese",
+        42 => "Sindhi",
+        43 => "",//"Sinhales",
+        44 => "",//"Spanish",
+        45 => "",//"Sudanese",
+        46 => "Tamil",
+        47 => "Telugu",
+        48 => "Tulu",
+        49 => "Urdu",
+        50 => "",//"Zhuang",
+        51 => "Other",
+      ),
+    'complexion' => array(
+        1 => 'Fair',
+        2 => 'Medium',
+        3 => 'Dark',
+        4 => 'Wheatish',
+        'D' => 'Don\'t Care',
+    ),
+    'built' => array(
+        1 => 'Slim',
+        2 => 'Average',
+        3 => 'Athletic',
+        4 => 'Heavy',
+        'D' => 'Don\'t Care',
+    ),
+    'smoke' => array(
+        1 => 'Yes',
+        2 => 'No',
+        'D' => 'Don\'t Care',
+    ),
+    'drink' => array(
+        1 => 'Yes',
+        2 => 'No',
+        'D' => 'Don\'t Care',
+    ),
+    'mangalik' => array(
+        1 => 'Yes',
+        2 => 'No',
+        'D' => 'Don\'t Care',
+    ),
+</code>
+    <hr>
+    </div>
+ -->  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Callitme Api</p>
+</footer>

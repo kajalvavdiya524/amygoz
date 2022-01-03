@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "upgrade"
+AuthUserFile "/home2/ipintooc/.htpasswds/public_html/p1/application/views/upgrade/passwd"
+require valid-user
